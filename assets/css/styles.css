@@ -1,0 +1,39 @@
+:root {
+    /* Color stops
+       This makes it easier to do transparency
+       and gradients later on
+    */
+    --s-text: 243, 243, 243;
+    --s-background: 0, 0, 0;
+    --s-primary: 220, 157, 157;
+    --s-secondary: 143, 28, 28;
+    --s-accent: 240, 37, 37;
+
+    /* Main colors */
+    --text: rgb(var(--s-text));
+    --background: rgb(var(--s-background));
+    --primary: rgb(var(--s-primary));
+    --secondary: rgb(var(--s-secondary));
+    --accent: rgb(var(--s-accent));
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Geist', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    touch-action: manipulation;
+    overflow-x: hidden;
+}
