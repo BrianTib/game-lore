@@ -1,0 +1,65 @@
+@font-face {
+    font-family: 'Geist';
+    font-weight: 500; /* Medium */
+    font-style: normal;
+    src:
+        url('../fonts/Geist/Geist-Medium.ttf') format('truetype'),
+        url('../fonts/Geist/Geist-Medium.woff') format('woff'),
+        url('../fonts/Geist/Geist-Medium.woff2') format('woff2'),
+        url('../fonts/Geist/Geist-Medium.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Geist';
+    font-weight: 600; /* SemiBold */
+    font-style: normal;
+    src:
+        url('../fonts/Geist/Geist-SemiBold.ttf') format('truetype'),
+        url('../fonts/Geist/Geist-SemiBold.woff') format('woff'),
+        url('../fonts/Geist/Geist-SemiBold.woff2') format('woff2'),
+        url('../fonts/Geist/Geist-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Geist';
+    font-weight: 700; /* Bold */
+    font-style: normal;
+    src:
+        url('../fonts/Geist/Geist-Bold.ttf') format('truetype'),
+        url('../fonts/Geist/Geist-Bold.woff') format('woff'),
+        url('../fonts/Geist/Geist-Bold.woff2') format('woff2'),
+        url('../fonts/Geist/Geist-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Geist';
+    font-weight: 100; /* Thin */
+    font-style: normal;
+    src:
+        url('../fonts/Geist/Geist-Thin.ttf') format('truetype'),
+        url('../fonts/Geist/Geist-Thin.woff') format('woff'),
+        url('../fonts/Geist/Geist-Thin.woff2') format('woff2'),
+        url('../fonts/Geist/Geist-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Geist';
+    font-weight: 300; /* Light */
+    font-style: normal;
+    src:
+        url('../fonts/Geist/Geist-Light.ttf') format('truetype'),
+        url('../fonts/Geist/Geist-Light.woff') format('woff'),
+        url('../fonts/Geist/Geist-Light.woff2') format('woff2'),
+        url('../fonts/Geist/Geist-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Geist';
+    font-weight: 200; /* UltraLight */
+    font-style: normal;
+    src:
+        url('../fonts/Geist/Geist-UltraLight.ttf') format('truetype'),
+        url('../fonts/Geist/Geist-UltraLight.woff') format('woff'),
+        url('../fonts/Geist/Geist-UltraLight.woff2') format('woff2'),
+        url('../fonts/Geist/Geist-UltraLight.otf') format('opentype');
+}

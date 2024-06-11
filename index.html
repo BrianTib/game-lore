@@ -3,13 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 1</title>
-</head>
-<body>
-    <h1>Hello world!</h1>
+    <title>GamerLore</title>
 
-    <!-- Add JQuery 3.7.1 -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="./assets/js/script.js"></script>
-</body>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Roboto Font -->
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+    <body>
+        <header>
+            <nav class="bg-zinc-950 fixed w-full z-20 top-0 left-0">
+                <div class=
+                    "max-w-screen-xl flex flex-wrap items-center justify-between
+                    mx-auto py-4 px-6"
+                >
+                    <!-- Logo -->
+                    <a href="https://flowbite.com/" class="flex items-center rtl:space-x-reverse">
+                        <span class="text-2xl font-semibold whitespace-nowrap text-white">Gamer</span>
+                        <span class="text-red-600 text-2xl font-semibold whitespace-nowrap">Lore</span>
+                    </a>
+                    
+                    <!-- Mobile Hamburger Menu -->
+                    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                        <!-- Screen Reader text -->
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                        </svg>
+                    </button>
+        
+                    <!-- Nav Elements-->
+                    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                        <ul class="font-medium flex flex-col md:flex-row md:space-x-5">
+                            <li>
+                                <a href="#" class="text-red-600" aria-current="page">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white md:hover:text-red-600">Franchises</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white md:hover:text-red-600">Facts</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white md:hover:text-red-600">APIs</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white md:hover:text-red-600">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <!-- Main content area -->
+        <main class="flex flex-col w-full mt-20">
+            <section class="border-b-2 border-zinc-600 w-full p-4">
+                <div class="max-w-5xl flex flex-col justify-center mx-auto my-10">
+                    <h1 class="text-6xl font-bold mb-4 text-center">
+                        Explore multiple characters from many beloved <span class="text-red-600">franchises</span>
+                    </h1>
+    
+                    <p class="mb-4 text-center text-xl text-zinc-500">
+                        Discover fun and random facts about your favorite game characters.
+                        Explore different franchises, learn interesting trivia, and enjoy the
+                        world of gaming lore.
+                    </p>
+                </div>
+
+                <ul class="flex gap-10 justify-center align-center">
+                    <!-- Card Component -->
+                    <li class="flex bg-zinc-950 h-72 w-48 items-center border-2 border-zinc-600 rounded-lg max-w-xs overflow-hidden">
+                        <a href="#" class="group flex flex-col w-full h-full">
+                            <div class="relative w-full h-full">
+                                <!-- Game Image/Logo-->
+                                <img
+                                    class="object-cover w-full h-full group-hover:h-1/2 transition-all"
+                                    src="./assets/images/franchises/call-of-duty.png"
+                                    alt="Call of Duty"
+                                >
+                                <!-- Game Description -->
+                                <div class="hidden absolute bottom-0 left-0 right-0 h-0 group-hover:flex group-hover:h-1/2 transition-all flex-col justify-between p-4 bg-zinc-950">
+                                    <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                        Call of Duty
+                                    </h5>
+                                    <p class="mb-4 font-normal text-gray-700 dark:text-gray-400">
+                                        The beloved FPS shooter from the early 2010s
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="flex bg-zinc-950 h-72 w-48 items-center border-2 border-green-600 rounded-lg max-w-xs overflow-hidden">
+                        <a href="#" class="group flex flex-col w-full h-full">
+                            <div class="relative w-full h-full">
+                                <img
+                                    class="object-cover w-full h-full group-hover:h-1/2 transition-all"
+                                    src="./assets/images/franchises/minecraft.png"
+                                    alt="Minecraft"
+                                >
+                                <div class="hidden absolute bottom-0 left-0 right-0 h-0 group-hover:flex group-hover:h-1/2 transition-all flex-col justify-between p-4 bg-zinc-950">
+                                    <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                        Minecraft
+                                    </h5>
+                                    <p class="mb-4 text-sm text-gray-400">
+                                        Build, explore, and survive in a blocky, procedurally generated world.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="flex bg-zinc-950 h-72 w-48 items-center border-2 border-cyan-600 rounded-lg max-w-xs overflow-hidden">
+                        <a href="#" class="group flex flex-col w-full h-full">
+                            <div class="relative w-full h-full">
+                                <img
+                                    class="object-cover w-full h-full group-hover:h-1/2 transition-all"
+                                    src="./assets/images/franchises/fortnite.png"
+                                    alt="Fortnite"
+                                >
+                                <div class="hidden absolute bottom-0 left-0 right-0 h-0 group-hover:flex group-hover:h-1/2 transition-all flex-col justify-between p-4 bg-zinc-950">
+                                    <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                        Fortnite
+                                    </h5>
+                                    <p class="mb-4 text-sm text-gray-400">
+                                        Compete in a shrinking map, build defenses, and be the last player standing.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    
+                    <li class="flex bg-zinc-950 h-72 w-48 items-center border-2 border-yellow-600 rounded-lg max-w-xs overflow-hidden">
+                        <a href="#" class="group flex flex-col w-full h-full">
+                            <div class="relative w-full h-full">
+                                <img
+                                    class="object-cover w-full h-full group-hover:h-1/2 transition-all"
+                                    src="./assets/images/franchises/gta-v.png"
+                                    alt="GTA V"
+                                >
+                                <div class="hidden absolute bottom-0 left-0 right-0 h-0 group-hover:flex group-hover:h-1/2 transition-all flex-col justify-between p-4 bg-zinc-950">
+                                    <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                        GTA V
+                                    </h5>
+                                    <p class="mb-4 text-sm text-gray-400">
+                                        Bank heists, car chases. Explore it all in this story-driven shooter.
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
+            <section class="h-10">
+                <h2>Hello world</h2>
+            </section>
+        </main>
+
+        <!-- JQuery 3.7.1 -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script type="module" src="./assets/js/script.js"></script>
+    </body>
 </html>
