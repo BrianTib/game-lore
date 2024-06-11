@@ -1,7 +1,7 @@
-# GameFactsHub
+# GamerLore
 
 ## Description
-GameFactsHub is a web application designed to provide fun and random facts about your favorite game characters. Whether you are a casual gamer or a hardcore fan, GameFactsHub offers a unique way to learn more about the characters you love from various games.
+GamerLore is a web application designed to provide fun and random facts about your favorite game characters. Whether you are a casual gamer or a hardcore fan, GamerLore offers a unique way to learn more about the characters you love from various games.
 
 ## Features
 - Character Browsing: Explore a wide range of game characters from different titles and genres.
