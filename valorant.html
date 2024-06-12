@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
     <body>
-        <header>
+        <header class="mb-10">
             <nav class="bg-zinc-950 fixed w-full z-20 top-0 left-0">
                 <div class=
                     "max-w-screen-xl flex flex-wrap items-center justify-between
                     mx-auto py-4 px-6"
                 >
                     <!-- Logo -->
-                    <a href="https://flowbite.com/" class="flex items-center rtl:space-x-reverse">
+                    <a href="index.html" class="flex items-center rtl:space-x-reverse">
                         <span class="text-2xl font-semibold whitespace-nowrap text-white">Gamer</span>
                         <span class="text-red-600 text-2xl font-semibold whitespace-nowrap">Lore</span>
                     </a>
@@ -36,7 +36,7 @@
                     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                         <ul class="font-medium flex flex-col md:flex-row md:space-x-5">
                             <li>
-                                <a href="#" class="text-red-600" aria-current="page">Home</a>
+                                <a href="index.html" class="text-white md:hover:text-red-600" aria-current="page">Home</a>
                             </li>
                             <li>
                                 <a href="#" class="text-white md:hover:text-red-600">Franchises</a>
@@ -57,34 +57,20 @@
         </header>
         
         <!-- Main content area -->
-        <main class="flex flex-col w-full mt-20">
-            <!-- Hero Section -->
-            <section class="bg-cover bg-center bg-no-repeat h-96" style="background-image: url('./assets/images/gta-v.jpg')">
-                <div class="flex flex-col items-center justify-center h-full text-center text-white">
-                    <h1 class="text-4xl font-bold">Grand Theft Auto V</h1>
-                    <p class="text-lg">The best-selling game of all time</p>
-                </div>
+        <main class="flex flex-col w-full">
+            <section class="relative">
+                <img class="object-cover w-full" src="./assets/images/valorant/valorant-banner.webp" alt="banner">
+                
+                <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
+                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                        Pink to orange
+                    </span>
+                </button>
             </section>
-
-            <!-- Game Info Section -->
-            <section class="max-w-screen-xl mx-auto py-10 px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <div>
-                        <h2 class="text-2xl font-semibold">Game Info</h2>
-                        <p class="text-lg mt-4">Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. It is the first main entry in the Grand Theft Auto series since 2008's Grand Theft Auto IV. Set within the fictional state of San Andreas, based on Southern California, the single-player story follows three protagonists—retired bank robber Michael De Santa, street gangster Franklin Clinton, and drug dealer and arms smuggler Trevor Philips—and their efforts to commit heists while under pressure from a corrupt government agency and powerful criminals.</p>
-                    </div>
-                    <div>
-                        <h2 class="text-2xl font-semibold">Gameplay</h2>
-                        <p class="text-lg mt-4">
-                            Players control the three lead protagonists throughout single-player and switch among them, both during and outside missions. The story is centred on the heist sequences, and many missions involve shooting and driving gameplay. A "wanted" system governs the aggression of law enforcement response to players who commit crimes. Grand Theft Auto Online, the game's online multiplayer mode, lets up to 30 players engage in a variety of different cooperative and competitive game modes.
-                        </p>
-                    </div>
-                </div>
-            </section>                
         </main>
 
         <!-- JQuery 3.7.1 -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <script type="module" src="./assets/js/gta-v.js"></script>
+        <script type="module" src="./assets/js/valorant.js"></script>
     </body>
 </html>
