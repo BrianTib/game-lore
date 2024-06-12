@@ -1,0 +1,159 @@
+{
+  "passive-mobs": [
+    {
+      "name": "Allay",
+      "health": 20,
+      "description": "A helpful mob that collects items similar to the one it's holding."
+    },
+    {
+      "name": "Axolotl",
+      "health": 14,
+      "description": "An aquatic mob that can be found in lush caves and can play dead when attacked."
+    },
+    {
+      "name": "Bat",
+      "health": 6,
+      "description": "A small, flying mob that spawns in dark areas and caves."
+    },
+    {
+      "name": "Cat",
+      "health": 10,
+      "description": "A tameable mob that scares away creepers and can be found in villages."
+    },
+    {
+      "name": "Chicken",
+      "health": 4,
+      "description": "A common passive mob that lays eggs and can be bred with seeds."
+    },
+    {
+      "name": "Cod",
+      "health": 3,
+      "description": "A fish mob found in oceans, rivers, and aquifers."
+    },
+    {
+      "name": "Cow",
+      "health": 10,
+      "description": "A common passive mob that can be bred with wheat and provides milk."
+    },
+    {
+      "name": "Donkey",
+      "health": 15,
+      "description": "A tameable mob that can carry chests and be ridden."
+    },
+    {
+      "name": "Fox",
+      "health": 10,
+      "description": "A nocturnal mob that can be found in taiga biomes."
+    },
+    {
+      "name": "Frog",
+      "health": 10,
+      "description": "A small, hopping mob found in swamps and mangrove swamps."
+    },
+    {
+      "name": "Glow Squid",
+      "health": 10,
+      "description": "An aquatic mob that emits a glow and drops glow ink sacs."
+    },
+    {
+      "name": "Horse",
+      "health": 15,
+      "description": "A tameable mob that can be ridden and bred with golden apples or carrots."
+    },
+    {
+      "name": "Mooshroom",
+      "health": 10,
+      "description": "A variant of the cow found in mushroom fields, can be milked for mushroom stew."
+    },
+    {
+      "name": "Mule",
+      "health": 15,
+      "description": "A hybrid of a horse and donkey that can carry chests."
+    },
+    {
+      "name": "Ocelot",
+      "health": 10,
+      "description": "A wild cat found in jungles that can be tamed."
+    },
+    {
+      "name": "Parrot",
+      "health": 6,
+      "description": "A tameable bird found in jungles that can mimic sounds of other mobs."
+    },
+    {
+      "name": "Pig",
+      "health": 10,
+      "description": "A common passive mob that can be bred with carrots and provides pork."
+    },
+    {
+      "name": "Pufferfish",
+      "health": 3,
+      "description": "An aquatic mob that inflates when threatened and poisons attackers."
+    },
+    {
+      "name": "Rabbit",
+      "health": 3,
+      "description": "A small, hopping mob that spawns in various biomes and can be bred with carrots."
+    },
+    {
+      "name": "Salmon",
+      "health": 3,
+      "description": "A fish mob found in cold and frozen oceans and rivers."
+    },
+    {
+      "name": "Sheep",
+      "health": 8,
+      "description": "A common passive mob that can be sheared for wool and bred with wheat."
+    },
+    {
+      "name": "Skeleton Horse",
+      "health": 15,
+      "description": "An undead variant of the horse that can be ridden and spawns during thunderstorms."
+    },
+    {
+      "name": "Snow Golem",
+      "health": 4,
+      "description": "A mob created from snow blocks and a pumpkin, throws snowballs at hostile mobs."
+    },
+    {
+      "name": "Squid",
+      "health": 10,
+      "description": "An aquatic mob that spawns in water and drops ink sacs."
+    },
+    {
+      "name": "Strider",
+      "health": 20,
+      "description": "A passive mob found in the Nether that can walk on lava."
+    },
+    {
+      "name": "Tadpole",
+      "health": 6,
+      "description": "A baby frog that will grow into a frog over time."
+    },
+    {
+      "name": "Tropical Fish",
+      "health": 3,
+      "description": "A colorful fish found in warm ocean biomes."
+    },
+    {
+      "name": "Turtle",
+      "health": 30,
+      "description": "A reptile found on beaches that lays eggs and can be bred with seagrass."
+    },
+    {
+      "name": "Villager",
+      "health": 20,
+      "description": "A passive mob that lives in villages and can trade with players."
+    },
+    {
+      "name": "Wandering Trader",
+      "health": 20,
+      "description": "A mob that appears randomly to offer trades to players."
+    },
+    {
+      "name": "Wolf",
+      "health": 8,
+      "description": "A tameable mob that can be bred with meat and will protect the player."
+    }
+  ]
+}
