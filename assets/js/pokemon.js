@@ -108,7 +108,6 @@ async function fetchPokemon(event) {
         statsValueEl.textContent = pokemonStats;
         statsEl.style.display = "block";
 
-        
         // set and display the pokemon height
         const heightEl = document.getElementById("pokemon-height");
         const heightValueEl = document.getElementById("pokemon-height-value");
@@ -141,6 +140,7 @@ async function fetchPokemon(event) {
         }
 
         const speciesData = await speciesResponse.json(); // convert the response to JSON
+        
         const evolutionChainResponse = await fetch(speciesData.evolution_chain.url); // fetch the evolution chain data
         // check if the response is ok
         if (!evolutionChainResponse.ok) {
