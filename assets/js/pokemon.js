@@ -40,6 +40,25 @@ async function fetchPokemonGameVersions(pokemonName) {
     return gameVersions;
 }
 
+// getFlavorText function
+async function fetchFlavorText(pokemonName) {
+    const url = `https://pokeapi.co/api/v2/pokemon-species/${pokemonName.toLowerCase()}`;
+    
+    const response = await fetch(url);
+    
+    if (!response.ok) {
+        throw new Error(`Error: Unable to fetch flavor text for ${pokemonName}`);
+    }
+    
+    const data = await response.json();
+
+    const flavorTextEntries = data.flavor_text_entries.filter(entry => entry.language.name === "en").slice(0, 1);
+    
+    // return flavor text
+    const flavorTexts = flavorTextEntries.map(entry => entry.flavor_text.replace(/\n|\f/g, ' '));
+    return flavorTexts;
+}
+
 // fetchEvolutionChain function
 // function to fetch the evolution chain names
 function fetchEvolutionChain(chain) {
@@ -120,6 +139,13 @@ async function fetchPokemon(event) {
         const typeValueEl = document.getElementById("pokemon-type-value");
         typeValueEl.textContent = pokemonType;
         typeEl.style.display = "block";
+
+        // fetch and display the flavor text
+        const flavorTexts = await fetchFlavorText(name);
+        const flavorTextEl = document.getElementById("pokemon-flavor-text");
+        const flavorTextValueEl = document.getElementById("pokemon-flavor-text-value");
+        flavorTextValueEl.innerHTML = flavorTexts.map(text => `<p>${text}</p>`).join('');
+        flavorTextEl.style.display = "block";
 
         // set and display the pokemon stats
         const statsEl = document.getElementById("pokemon-stats");
