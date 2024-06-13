@@ -61,7 +61,7 @@
     <!-- main section -->
      <main class="mx-10 mt-20 text-zinc-600">
         <form>
-            <input type="text" id="pokemon-name" placeholder="Enter the name of a Pokemon">
+            <input type="text" id="pokemon-name" placeholder="Enter the name of a Pokémon">
             <button id="search-button">Search</button><br>
          </form>
          
@@ -70,6 +70,10 @@
             <p id="pokemon-name-display" style="display: none">Name: <span id="pokemon-name-value"></span></p>
             <img src="" alt="Pokemon Sprite" id="pokemon-sprite" style="display: none">
             <p id="pokemon-type" style="display:none;">Type: <span id="pokemon-type-value"></span></p>
+            <div id="pokemon-flavor-text" style="display: none;">
+                <h3>Pokédex Entry:</h3>
+                <div id="pokemon-flavor-text-value"></div>
+            </div>
             <p id="pokemon-stats" style="display:none;">Base Stats: <span id="pokemon-stats-value"></span></p>
             <p id="pokemon-height" style="display: none">Height: <span id="pokemon-height-value"></span></p>
             <p id="pokemon-weight" style="display: none">Weight: <span id="pokemon-weight-value"></span></p>
