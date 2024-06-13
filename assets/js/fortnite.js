@@ -4,12 +4,7 @@ const mapButton=document.getElementById('map-search-btn')
 const statButton=document.getElementById('stat-search-btn')
 const apiKey ='cf9a481a-5823-4216-ba41-5deccd3e6556'
 
-newsButton.addEventListener('click', handleNewsButtonClick)
 
-function handleNewsButtonClick(event){
-  getNewsDataFromAPI()
-  console.log('News button')
-}
 
 
 mapButton.addEventListener('click', handleMapButtonClick) 
@@ -24,7 +19,7 @@ function handleStatClick (event){
   console.log('stat click')
 }
 
-function getNewsDataFromAPI(){
+
    fetch('https://fortnite-api.com/v2/news', {
     method: "GET",
     headers: {
@@ -39,8 +34,8 @@ function getNewsDataFromAPI(){
               //looking for specific news 
           generateCard(messageOfTheDay);
         }         
-      }
-    )}
+      } )
+
   
 function generateCard(data){
   console.log(data);
@@ -66,7 +61,7 @@ function generateCard(data){
         </a>
     </li>`;
   
-    const newsSearch=document.getElementById('news-search')
+    const newsSearch=document.getElementById('news-container')
     newsSearch.innerHTML +=html
 }
 
