@@ -25,9 +25,10 @@ async function fetchAbilityDescription(url) {
 // function to fetch the evolution chain names
 function fetchEvolutionChain(chain) {
     let evolutions = [];
-    let current = chain;
+    let current = chain; // set the current chain to the chain
+
     while (current) {
-        evolutions.push(current.species.name);
+        evolutions.push(current.species.name); // push the current species name to the evolutions array
         if (current.evolves_to.length > 0) {
             current = current.evolves_to[0];
         } else {
@@ -150,7 +151,8 @@ async function fetchPokemon(event) {
         const evolutionChain = fetchEvolutionChain(evolutionChainData.chain); // get the evolution chain names
         const evolutionEl = document.getElementById("pokemon-evolution");
         const evolutionValueEl = document.getElementById("pokemon-evolution-value");
-        evolutionValueEl.textContent = evolutionChain.map(capitalizeFirstLetter).join(' -> '); // display the evolution chain names
+        // set and display the pokemon evolution chain with links
+        evolutionValueEl.innerHTML = evolutionChain.map(name => `<a href="#" class="pokemon-link">${capitalizeFirstLetter(name)}</a>`).join(' -> '); // display the evolution chain names as links
         evolutionEl.style.display = "block";
     }
     // catch any errors
@@ -158,6 +160,16 @@ async function fetchPokemon(event) {
         console.log(error); // log the error to the console
     }
 };
+
+// delegation for dynamic links on evolution chain
+document.getElementById("pokemon-evolution-value").addEventListener("click", function(event) {
+    // check if the clicked element is a pokemon link
+    if (event.target.classList.contains("pokemon-link")) {
+        const pokemonName = event.target.textContent.toLowerCase();
+        document.getElementById("pokemon-name").value = pokemonName;
+        fetchPokemon(event);
+    }
+});
 
 // add an event listener to the search button
 document.getElementById("search-button").addEventListener("click", fetchPokemon); // when the search button is clicked, call the fetchPokemon function
