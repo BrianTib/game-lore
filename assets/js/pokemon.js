@@ -21,6 +21,25 @@ async function fetchAbilityDescription(url) {
     return descriptionEntry ? descriptionEntry.effect : "No description available.";
 }
 
+// fetchPokemonGameVersions function
+async function fetchPokemonGameVersions(pokemonName) {
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`;
+    
+    const response = await fetch(url);
+    
+    // check if the response is ok
+    if (!response.ok) {
+        throw new Error(`Error: Unable to fetch data for ${pokemonName}`);
+    }
+    
+    const data = await response.json(); // convert the response to JSON
+    const gameIndices = data.game_indices || [];
+    
+    // return version names
+    const gameVersions = gameIndices.map(index => capitalizeFirstLetter(index.version.name));
+    return gameVersions;
+}
+
 // fetchEvolutionChain function
 // function to fetch the evolution chain names
 function fetchEvolutionChain(chain) {
@@ -131,6 +150,13 @@ async function fetchPokemon(event) {
         const hiddenAbilitiesValueEl = document.getElementById("pokemon-hidden-abilities-value");
         hiddenAbilitiesValueEl.textContent = pokemonHiddenAbilities;
         hiddenAbilitiesEl.style.display = "block";
+
+        // fetch and display the game versions
+        const gameVersions = await fetchPokemonGameVersions(name);
+        const gameVersionsEl = document.getElementById("pokemon-versions");
+        const gameVersionsValueEl = document.getElementById("pokemon-versions-value");
+        gameVersionsValueEl.textContent = gameVersions.join(', ');
+        gameVersionsEl.style.display = "block";
 
         // fetch and display the pokemon evolution chain
         const speciesResponse = await fetch(data.species.url); // fetch the species data to get the evolution chain URL
