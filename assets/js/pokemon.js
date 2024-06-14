@@ -233,11 +233,17 @@ async function fetchPokemon(event) {
         typeEl.css("display", "block");
 
         // fetch and display the flavor text
+        // if no flavor text is found, clear the previous text storage and display "No Pokédex entry found."
         const flavorTexts = await fetchFlavorText(name);
         const flavorTextEl = $("#pokemon-flavor-text");
         const flavorTextValueEl = $("#pokemon-flavor-text-value");
-        flavorTextValueEl.html(flavorTexts.map(text => `<p>${text}</p>`).join(''));
-        flavorTextEl.css("display", "block");
+        if (flavorTexts.length > 0) {
+            flavorTextValueEl.text(flavorTexts.map(text => `<p>${text}</p>`).join(''));
+            flavorTextEl.css("display", "block");
+        } else {
+            flavorTextValueEl.text("");
+            flavorTextEl.css("display", "none");
+        }
 
         // set and display the pokemon stats
         const statsEl = $("#pokemon-stats");
@@ -293,13 +299,22 @@ async function fetchPokemon(event) {
             throw new Error("Evolution chain network response was not ok");
         }
 
+        // evolutionValueEl.html(evolutionChain.map(name => `<a href="#" class="pokemon-link">${capitalizeFirstLetter(name)}</a>`).join(' -> '));
+        // evolutionEl.css("display", "block");
+
         const evolutionChainData = await evolutionChainResponse.json(); // convert the response to JSON
         const evolutionChain = fetchEvolutionChain(evolutionChainData.chain); // get the evolution chain names
         const evolutionEl = $("#pokemon-evolution");
         const evolutionValueEl = $("#pokemon-evolution-value");
         // set and display the pokemon evolution chain with links
-        evolutionValueEl.html(evolutionChain.map(name => `<a href="#" class="pokemon-link">${capitalizeFirstLetter(name)}</a>`).join(' -> ')); // display the evolution chain names as links
-        evolutionEl.css("display", "block");
+        // if no evolutionary chain is found, clear the previous chain storage and display "No evolution chain found."
+        if (evolutionChain.length > 0) {
+            evolutionValueEl.html(evolutionChain.map(name => `<a href="#" class="pokemon-link">${capitalizeFirstLetter(name)}</a>`).join(' -> '));
+            evolutionEl.css("display", "block");
+        } else {
+            evolutionValueEl.html("");
+            evolutionEl.css("display", "none");
+        }
     }
     // catch any errors
     catch (error) {
