@@ -56,37 +56,57 @@
             </nav>
         </header>
 
-       <main class="container mx-auto flex flex-col justify-center gap-10">
-            <section>
+       <main class="container relative mx-auto flex flex-col justify-center gap-10 bg-red-500">
+           <img class="w-full h-full flex z-0 absolute object-cover top-0 left-0" src="assets/images/minecraft/Minecraft-background.webp" alt="Minecraft-background">
+           <section class="z-10">
                 <h1 class="flex justify-center py-6">
                     <img src="assets/images/minecraft/minecraft-logo.png" alt="Minecraft Logo">
                 </h1>
             </section>
 
-            <section class="mx-auto py-5 px-10">
-                <form class="flex flex-col max-w-min gap-5">
-                    <label for="hostile-mobs-input">Hostile Mobs</label>
-                    <input id="hostile-mobs-input" class="rounded w-30 px-4 py-2 text-black" type="text" placeholder="Mob Name">
-                    <button type="submit" class="text-white bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">
-                        Search
-                    </button>
-                </form>                   
+            <section class="z-10 mx-auto py-5 px-10">
+                <div class="bg-slate-100 bg-opacity-50 rounded-lg">
+                    <form id="hostile-mobs-form" class="flex flex-col max-w-min gap-5 p-2">
+                        <label for="hostile-mobs-input" class="text-black font-bold font-mono">Hostile Mobs</label>
+                        <input id="hostile-mobs-input" class="rounded w-30 px-4 py-2 text-black" type="text" placeholder="Mob Name">
+                        <button type="submit" class="text-white bg-green-900 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">
+                            Search
+                        </button>
+                        <p class="text-black decoration-8 font-medium">
+                            Hostile mobs in Minecraft are aggressive non-player characters (NPCs) that attack the player on sight or
+                            when they are within their detection range. They are also known as monsters and usually spawn in the dark.
+                        </p>
+                    </form>
+                </div>                  
             </section>
 
-            <section class="mx-auto py-5 px-10">
-                <form class="flex flex-col max-w-min gap-5">
-                    <label for="passive-mobs-input">Passive Mobs</label>
-                    <input id="passive-mobs-input" class="rounded w-30 px-4 py-2 text-black" type="text" placeholder="Mob Name">
-                    <button type="submit" class="text-white bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">
-                        Search
-                    </button>
-                </form>                   
+            <!-- Mockup Hostile Mob Data -->
+            <section id="hostile-mob-data" class="hidden flex flex-col w-80  gap-5 z-10 p-5 mx-auto">
+                
+             </section>
+
+            <section class="mx-auto z-10 py-5 px-10">
+                <div class="bg-slate-100 bg-opacity-50 rounded-lg">
+                    <form id="passive-mobs-form" class="flex flex-col max-w-min gap-5 p-2">
+                        <label for="passive-mobs-input" class="text-black font-bold font-mono">Passive Mobs</label>
+                        <input id="passive-mobs-input" class="rounded w-30 px-4 py-2 text-black" type="text" placeholder="Mob Name">
+                        <button type="submit" class="text-white bg-green-900 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">
+                            Search
+                        </button>
+                        <p class="text-black decoration-8 font-medium">Passive mobs are gentle creatures that have no quarrel with you. Their reaction to a player might vary (some may run away if they spot you) but the common denominator for this group of mobs is that they will never attack you even if you were to attack them.</p>
+                    </form>  
+                </div>                 
             </section>
+
+            <section id="passive-mob-data" class="hidden flex flex-col w-80  gap-5 z-10 p-5 mx-auto">
+                
+            </section>
+
        </main>
     </body>
    
 <!-- JQuery 3.7.1 -->
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script type="module" src="./assets/js/script.js"></script>
+<script src="./assets/js/minecraft.js"></script>
     </body>
 </html>
