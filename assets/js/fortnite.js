@@ -54,6 +54,9 @@ function fetchNewsAPIData() {
           }
         }
       }
+      else {
+        return response.json()
+      }
     })
     .then((data) => {
       //console.log(data.data.br.motds);
