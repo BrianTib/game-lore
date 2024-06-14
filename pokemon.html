@@ -58,8 +58,20 @@
         </nav>
     </header>
 
+    <!-- hero image -->
+    <div class="relative w-full -mt-2 h-96 overflow-hidden border-b-2 border-gray-500">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
+        <img src="./assets/images/pokemon/pokemon-header.jpg" alt="Pokémon Header" class="w-full h-auto object-cover">
+        <div class="absolute inset-0 flex flex-col mt-12 items-center justify-center items-center">
+            <h1 class="text-white text-center text-6xl font-bold">Welcome to Pokémon Game<span class="text-red-600">Lore!</span></h1>
+            <h3 class="text-gray-300 text-xl underline mt-3 p-2 rounded" style="background: radial-gradient(circle, rgba(95, 95, 95, 0.5), transparent);">On this page you can search for Pokédex entries that include types, base stats, abilities, evolution chains, and more!</h3>
+            <h3 class="text-gray-300 text-xl underline mt-1 p-2 rounded" style="background: radial-gradient(circle, rgba(95, 95, 95, 0.5), transparent);">You can also find information about all game-versions of Pokémon!</h3>
+        </div>
+    </div>
+    
+
     <!-- main section -->
-     <main class="mx-10 mt-20 text-zinc-600">
+     <main class="mx-8 mt-8 text-zinc-600">
         <form>
             <input type="text" id="pokemon-name" placeholder="Enter the name of a Pokémon">
             <button id="search-button">Search</button><br>
