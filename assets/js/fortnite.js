@@ -1,7 +1,7 @@
 //dependencies
 
 // const mapButton=document.getElementById('map-search-btn')
-// const statButton=document.getElementById('stat-search-btn')
+const statSearchFormEl = document.getElementById('stat-search-form')
 const apiKey1 = 'cf9a481a-5823-4216-ba41-5deccd3e6556'
 const apiKey2 = "293db903-eb94-4a7d-adba-85e9cc758ab3"
 
@@ -14,11 +14,9 @@ getNewsData()
 //   console.log('map button')
 // }
 
-// statButton.addEventListener('click', handleStatClick)
+statSearchFormEl.addEventListener('submit', handleStatFormSubmit)
 
-// function handleStatClick (event){
-//   console.log('stat click')
-// }
+
 
 // check local storage for news data
 
@@ -132,6 +130,38 @@ function generateCards(motds){
     newsSearch.innerHTML +=html
 }
 
+function handleStatFormSubmit (event){
+  event.preventDefault();
+
+  const statsUsername=$('#username-input').val();
+  const accountType=$('#account-type-selector').val();
+  const timeWindow=$('#time-window-selector').val();
+  const imagePlatform= $('#image-platform-selector').val();
+
+  console.log('statsUsername', statsUsername);
+  console.log('accountType', accountType);
+  console.log('timeWindow', timeWindow);
+  console.log('imagePlatform', imagePlatform);
+}
+
+function getStatsData(){
+  const localSData = checkLocalStorageForFreshStatsData()
+
+  if (localSData) {
+    generateCards(localSData)
+  } else {
+    fetchStatsAPIData()
+  }
+}
+
+function fetchStatsAPIData(){
+  fetch('https://fortnite-api.com/v2/stats/br/v2', {
+    method: "GET",
+    headers: {
+      Authorization: apiKey2
+    }
+    })
+}
 
 
 
