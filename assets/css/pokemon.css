@@ -1,0 +1,25 @@
+.collapsible {
+    background-color: #808080;
+    color: #eeeeee;
+    cursor: pointer;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+}
+
+.active, .collapsible:hover {
+    background-color: #adadad;
+}
+
+.content {
+    display: none;
+    overflow: hidden;
+    padding: 0 18px;
+}
+
+.content p {
+    cursor: pointer;
+}
