@@ -35,7 +35,7 @@ function displayHostileMobData(mob) {
                 <p>Name: ${mob.name}</p>
                 <p>Health: ${mob.health}</p>
                 <p>Attack Damage: ${mob.attack_damage}</p>
-                <p>Description: "${mob.description}</p>
+                <p>Description: "${mob.description}"</p>
             </ul>
         </div>
     `);
@@ -78,7 +78,7 @@ function displayPassiveMobData(mob) {
                 <p>Name: ${mob.name}</p>
                 <p>Health: ${mob.health}</p>
                 <p>Attack Damage: ${mob.attack_damage}</p>
-                <p>Description: "${mob.description}</p>
+                <p>Description: "${mob.description}"</p>
             </ul>
         </div>
     `);
