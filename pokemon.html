@@ -64,8 +64,57 @@
             <input type="text" id="pokemon-name" placeholder="Enter the name of a Pokémon">
             <button id="search-button">Search</button><br>
          </form>
+
+        <h2>Pokémon by alphabetical order:</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-center">
+            <div class="col-span-1">
+                <button class="collapsible p-2 rounded">Pokémon: A - B</button>
+                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-ab"></div>
+            </div>
+
+            <div class="col-span-1">
+                <button class="collapsible p-2 rounded">Pokémon: C - D</button>
+                <div class="content hidden grid grid-cols-2 md:grid-cols-3 gap-4 p-4 rounded" id="group-cd"></div>
+            </div>
+
+            <div class="col-span-1">
+                <button class="collapsible p-2 rounded">Pokémon: E - G</button>
+                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-eg"></div>
+            </div>
+
+            <div class="col-span-1">
+                <button class="collapsible p-2 rounded">Pokémon: H - J</button>
+                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-hj"></div>
+            </div>
+
+            <div class="col-span-1">
+                <button class="collapsible p-2 rounded">Pokémon: K - M</button>
+                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-km"></div>
+            </div>
+
+            <div class="col-span-1">
+                <button class="collapsible p-2 rounded">Pokémon: N - P</button>
+                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-np"></div>
+            </div>
+
+            <div class="col-span-1">
+                <button class="collapsible p-2 rounded">Pokémon: Q - S</button>
+                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-qs"></div>
+            </div>
+
+            <div class="col-span-1">
+                <button class="collapsible p-2 rounded">Pokémon: T - V</button>
+                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-tv"></div>
+            </div>
+
+            <div class="col-span-1">
+                <button class="collapsible p-2 rounded">Pokémon: W - Z</button>
+                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-wz"></div>
+            </div>
+        </div>
          
         <div id="pokemon-data">
+            <h2 style="display: none" id="search-result-header"></h2>
             <p id="pokemon-id" style="display: none">ID: <span id="pokemon-id-value"></span></p>
             <p id="pokemon-name-display" style="display: none">Name: <span id="pokemon-name-value"></span></p>
             <img src="" alt="Pokemon Sprite" id="pokemon-sprite" style="display: none">
@@ -90,6 +139,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- link to the pokemon.js file -->
     <script type="module" src="./assets/js/pokemon.js"></script>
+    <!-- link to the pokemon.css file -->
+    <link rel="stylesheet" href="./assets/css/pokemon.css">
 </body>
 
 </html>

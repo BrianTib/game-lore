@@ -4,6 +4,75 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1); // capitalize the first letter of the string
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+    // setupCollapsible function
+    // this function sets up the collapsible sections
+    function setupCollapsible() {
+        const collapsibles = document.querySelectorAll(".collapsible");
+        collapsibles.forEach(collapsible => {
+            collapsible.addEventListener("click", function() {
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    // close a collapsible section when another is clicked
+                    document.querySelectorAll(".content").forEach(otherContent => {
+                        otherContent.style.display = "none";
+                    });
+                    content.style.display = "block";
+                }
+            });
+        });
+    }
+
+    // populatePokemonNames function
+    // this function fetches the pokemon names from the API and populates the collapsible sections with the names
+    async function populatePokemonNames() {
+        const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=1000");
+        const data = await response.json();
+        const pokemonList = data.results;
+
+        // group the Pokémon names by the first letter of their name
+        const groups = {
+            ab: document.getElementById("group-ab"),
+            cd: document.getElementById("group-cd"),
+            eg: document.getElementById("group-eg"),
+            hj: document.getElementById("group-hj"),
+            km: document.getElementById("group-km"),
+            np: document.getElementById("group-np"),
+            qs: document.getElementById("group-qs"),
+            tv: document.getElementById("group-tv"),
+            wz: document.getElementById("group-wz"),
+        };
+
+        // populate the collapsible sections with the Pokémon names
+        pokemonList.forEach(pokemonName => {
+            const name = capitalizeFirstLetter(pokemonName.name);
+            let group;
+            if (name.match(/^[A-Ba-b]/)) group = groups.ab;
+            else if (name.match(/^[C-Dc-d]/)) group = groups.cd;
+            else if (name.match(/^[E-Ge-g]/)) group = groups.eg;
+            else if (name.match(/^[H-Jh-j]/)) group = groups.hj;
+            else if (name.match(/^[K-Mk-m]/)) group = groups.km;
+            else if (name.match(/^[N-Pn-p]/)) group = groups.np;
+            else if (name.match(/^[Q-Sq-s]/)) group = groups.qs;
+            else if (name.match(/^[T-Vt-v]/)) group = groups.tv;
+            else if (name.match(/^[W-Zw-z]/)) group = groups.wz;
+
+            const pElement = document.createElement("p");
+            pElement.setAttribute("id", "collapsible-search");
+            pElement.classList.add("pokemon-link");
+            pElement.textContent = name;
+            group.appendChild(pElement);
+        });
+    }
+
+    // initialize collapsible sections and populate Pokémon names
+    setupCollapsible();
+    populatePokemonNames();
+});
+
 // fetchAbilityDescriotion function
 async function fetchAbilityDescription(url) {
     const response = await fetch(url);
@@ -117,6 +186,11 @@ async function fetchPokemon(event) {
         // filter hidden abilities to display the description
         const pokemonHiddenAbilities = abilityDescrip.filter((_, index) => data.abilities[index].is_hidden).join(', ');
 
+        // display the search result header
+        const searchHeaderEl = document.getElementById("search-result-header");
+        searchHeaderEl.textContent = `Search result for ${pokemonName}:`;
+        searchHeaderEl.style.display = "block";
+
         // set and display the pokemon id
         const idEl = document.getElementById("pokemon-id");
         const idValueEl = document.getElementById("pokemon-id-value");
@@ -212,6 +286,16 @@ async function fetchPokemon(event) {
         console.log(error); // log the error to the console
     }
 };
+
+// delegation for dynamic links on collapsible sections
+document.addEventListener("click", function(event) {
+    // check if the clicked element is a collapsible search link
+    if (event.target.id === "collapsible-search") {
+        const pokemonName = event.target.textContent.toLowerCase();
+        document.getElementById("pokemon-name").value = pokemonName;
+        fetchPokemon(event);
+    }
+});
 
 // delegation for dynamic links on evolution chain
 document.getElementById("pokemon-evolution-value").addEventListener("click", function(event) {
