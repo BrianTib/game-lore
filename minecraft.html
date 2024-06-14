@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamerLore</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Roboto Font -->
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+    <body>
+        <header class="mb-20">
+            <nav class="bg-zinc-950 fixed w-full z-20 top-0 left-0">
+                <div class=
+                    "max-w-screen-xl flex flex-wrap items-center justify-between
+                    mx-auto py-4 px-6"
+                >
+                    <!-- Logo -->
+                    <a href="index.html" class="flex items-center rtl:space-x-reverse">
+                        <span class="text-2xl font-semibold whitespace-nowrap text-white">Gamer</span>
+                        <span class="text-red-600 text-2xl font-semibold whitespace-nowrap">Lore</span>
+                    </a>
+                    
+                    <!-- Mobile Hamburger Menu -->
+                    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                        <!-- Screen Reader text -->
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                        </svg>
+                    </button>
+        
+                    <!-- Nav Elements-->
+                    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                        <ul class="font-medium flex flex-col md:flex-row md:space-x-5">
+                            <li>
+                                <a href="#" class="text-red-600" aria-current="page">Home</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white md:hover:text-red-600">Franchises</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white md:hover:text-red-600">Facts</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white md:hover:text-red-600">APIs</a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white md:hover:text-red-600">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+       <main class="container mx-auto flex flex-col justify-center gap-10">
+            <section>
+                <h1 class="flex justify-center py-6">
+                    <img src="assets/images/minecraft/minecraft-logo.png" alt="Minecraft Logo">
+                </h1>
+            </section>
+
+            <section class="mx-auto py-5 px-10">
+                <form class="flex flex-col max-w-min gap-5">
+                    <label for="hostile-mobs-input">Hostile Mobs</label>
+                    <input id="hostile-mobs-input" class="rounded w-30 px-4 py-2 text-black" type="text" placeholder="Mob Name">
+                    <button type="submit" class="text-white bg-green-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">
+                        Search
+                    </button>
+                </form>                   
+            </section>
+
+            <section class="mx-auto py-5 px-10">
+                <form class="flex flex-col max-w-min gap-5">
+                    <label for="passive-mobs-input">Passive Mobs</label>
+                    <input id="passive-mobs-input" class="rounded w-30 px-4 py-2 text-black" type="text" placeholder="Mob Name">
+                    <button type="submit" class="text-white bg-red-700 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none">
+                        Search
+                    </button>
+                </form>                   
+            </section>
+       </main>
+    </body>
+   
+<!-- JQuery 3.7.1 -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script type="module" src="./assets/js/script.js"></script>
+    </body>
+</html>
