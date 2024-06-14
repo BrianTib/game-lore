@@ -64,6 +64,12 @@ document.addEventListener("DOMContentLoaded", function() {
             pElement.setAttribute("id", "collapsible-search");
             pElement.classList.add("pokemon-link");
             pElement.textContent = name;
+            pElement.addEventListener("click", function() {
+                // Close the collapsible section when a p element is clicked
+                const content = this.parentElement;
+                content.style.display = "none";
+                content.previousElementSibling.classList.remove("active");
+            });
             group.appendChild(pElement);
         });
     }
