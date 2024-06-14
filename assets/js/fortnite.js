@@ -44,7 +44,17 @@ function fetchNewsAPIData() {
       Authorization: apiKey2
     }
     }) //replace with new api url
-    .then((response)=> response.json())
+    .then((response)=> {
+      if (!response.ok) {
+        return {
+          data: {
+            br: {
+              motds: backupMOTDS
+            }
+          }
+        }
+      }
+    })
     .then((data) => {
       //console.log(data.data.br.motds);
       const motds=data.data.br.motds;
