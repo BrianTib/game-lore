@@ -233,17 +233,11 @@ async function fetchPokemon(event) {
         typeEl.css("display", "block");
 
         // fetch and display the flavor text
-        // if no flavor text is found, clear the previous text storage and display "No Pokédex entry found."
         const flavorTexts = await fetchFlavorText(name);
         const flavorTextEl = $("#pokemon-flavor-text");
         const flavorTextValueEl = $("#pokemon-flavor-text-value");
-        if (flavorTexts.length > 0) {
-            flavorTextValueEl.text(flavorTexts.map(text => `<p>${text}</p>`).join(''));
-            flavorTextEl.css("display", "block");
-        } else {
-            flavorTextValueEl.text("");
-            flavorTextEl.css("display", "none");
-        }
+        flavorTextValueEl.html(flavorTexts.map(text => `<p>${text}</p>`).join(''));
+        flavorTextEl.css("display", "block");
 
         // set and display the pokemon stats
         const statsEl = $("#pokemon-stats");
