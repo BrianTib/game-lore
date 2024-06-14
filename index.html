@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamerLore</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Roboto Font -->
     <link rel="stylesheet" href="./assets/css/fonts.css">
@@ -19,8 +23,8 @@
                 >
                     <!-- Logo -->
                     <a href="index.html" class="flex items-center rtl:space-x-reverse">
-                        <span class="text-2xl font-semibold whitespace-nowrap text-white">Gamer</span>
-                        <span class="text-red-600 text-2xl font-semibold whitespace-nowrap">Lore</span>
+                        <span class="text-2xl whitespace-nowrap text-white">Gamer</span>
+                        <span class="text-red-600 text-2xl whitespace-nowrap">Lore</span>
                     </a>
                     
                     <!-- Mobile Hamburger Menu -->
@@ -39,16 +43,16 @@
                                 <a href="#" class="text-red-600" aria-current="page">Home</a>
                             </li>
                             <li>
-                                <a href="#" class="text-white md:hover:text-red-600">Franchises</a>
+                                <a href="#franchises" class="text-white md:hover:text-red-600">Franchises</a>
                             </li>
                             <li>
-                                <a href="#" class="text-white md:hover:text-red-600">Facts</a>
+                                <a href="#facts" class="text-white md:hover:text-red-600">Facts</a>
                             </li>
                             <li>
-                                <a href="#" class="text-white md:hover:text-red-600">APIs</a>
+                                <a href="#technologies" class="text-white md:hover:text-red-600">Technologies</a>
                             </li>
                             <li>
-                                <a href="#" class="text-white md:hover:text-red-600">Contact</a>
+                                <a href="#contact" class="text-white md:hover:text-red-600">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -58,22 +62,23 @@
         
         <!-- Main content area -->
         <main class="flex flex-col w-full mt-20">
-            <section class="border-b-2 border-zinc-600 w-full p-4">
+            <section class="border-b-4 border-zinc-900 w-full p-4">
                 <div class="max-w-4xl flex flex-col justify-center mx-auto my-40">
-                    <h1 class="text-7xl font-bold mb-4 text-center">
+                    <h1 class="text-7xl mb-4 text-center">
                         Explore multiple characters from many beloved <span class="text-red-600">franchises</span>
                     </h1>
     
                     <p class="mb-4 text-center text-xl text-zinc-500">
                         Discover fun and random facts about your favorite game characters.
                         Explore different franchises, learn interesting trivia, and enjoy the
-                        world of gaming lore.
+                        world of gaming lore
                     </p>
                 </div>
             </section>
 
-            <section class="h-auto flex flex-col gap-20 bg-gradient-to-b from-red-950/[.4] to-zinc-950 py-20">
-                <h2 class="text-center text-5xl">
+            <!-- Franchise choose menu -->
+            <section id="#franchises" class="h-auto flex flex-col gap-20 bg-gradient-to-b from-red-950/[.4] to-zinc-950 py-20 border-b-4 border-zinc-900">
+                <h2 class="text-center text-7xl">
                     Trending <span class="text-red-600">Franchises</span>
                 </h2>
 
@@ -90,7 +95,7 @@
                                 >
                                 <!-- Game Description -->
                                 <div class="hidden absolute bottom-0 left-0 right-0 h-0 group-hover:flex group-hover:h-1/2 transition-all flex-col justify-between p-4 bg-zinc-950">
-                                    <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                    <h5 class="mb-1 text-2xl tracking-tight text-gray-900 dark:text-white">
                                         Valorant
                                     </h5>
                                     <p class="mb-4 text-sm text-gray-400">
@@ -153,7 +158,7 @@
                                     <h5 class="mb-1 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                                         Pokemon
                                     </h5>
-                                    <p class="mb-4 text-sm text-gray-400">
+                                    <p class="mb-4 text-xs text-gray-400">
                                         A role-playing game where players capture and train Pokémon to become the Champion of the Sinnoh region.
                                     </p>
                                 </div>
@@ -165,6 +170,108 @@
                 <h4 class="text-center text-3xl text-zinc-600">
                     And many <span class="text-white">more</span> upcoming!
                 </h4>
+            </section>
+
+            <!-- Random Fact Section -->
+            <section id="facts" class="h-auto flex align-center border-b-4 border-zinc-900">
+                <div class="flex flex-col my-52 align-center justify-center mx-auto h-auto">
+                    <div class="w-96">
+                        <h2 class="text-4xl text-center">Get a random fact</h2>
+                        <p class="text-center text-zinc-500">
+                            Click the button to display a random fact from one of our
+                            franchises
+                        </p>
+                    </div>
+    
+                    <div class="flex w-96 justify-center mt-10">
+                        <button class=
+                            "relative inline-flex items-center justify-center
+                            p-0.5 overflow-hidden text-xl text-white font-medium
+                            rounded-lg group bg-gradient-to-br from-red-600
+                            to-neutral-900
+                            focus:ring-0 focus:outline-none"
+                        >
+                            <span class=
+                                "relative px-5 py-2.5 transition-all ease-in
+                                duration-75 bg-black
+                                rounded-md group-hover:bg-opacity-0"
+                            >
+                                Generate
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class= "border-b-4 border-zinc-900 bg-gradient-to-b from-black to-zinc-900/[.5]">
+                <div class="w-2/4 flex flex-col my-20 gap-20 justify-center align-center mx-auto">
+                    <div class="w-96 mx-auto flex flex-col justify-center align-center gap-2">
+                        <h2 class="w-auto text-center text-5xl">Technologies</h2>
+                        <p class="w-auto text-center text-xl text-zinc-500">
+                            These are the different technologies that power
+                            <span class="text-white">Gamer</span><span class="text-red-600">Lore</span>
+                        </p>
+                    </div>
+    
+                    <div class="grid grid-cols-4 place-items-center gap-10">
+                        <!-- HTML5 -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 452 520"><path fill="#e34f26" d="M41 460 0 0h451l-41 460-185 52"/><path fill="#ef652a" d="m226 472 149-41 35-394H226"/><path fill="#ecedee" d="M226 208h-75l-5-58h80V94H84l15 171h127zm0 147-64-17-4-45h-56l7 89 117 32z"/><path fill="#fff" d="M226 265h69l-7 73-62 17v59l115-32 16-174H226zm0-171v56h136l5-56z"/></svg>
+                        <!-- CSS3 -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 452 520"><path fill="#0c73b8" d="M41 460 0 0h451l-41 460-185 52"/><path fill="#30a9dc" d="m226 472 149-41 35-394H226"/><path fill="#ecedee" d="M226 208H94l5 57h127zm0-114H84l5 56h137zm0 261-124-33 7 60 117 32z"/><path fill="#fff" d="M226 265h69l-7 73-62 17v59l115-32 26-288H226v56h80l-6 58h-74z"/></svg>
+                        <!-- Figma -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 54 80" fill="none"><g clip-path="url(#a)"><path d="M13.333 80c7.36 0 13.334-5.973 13.334-13.333V53.334H13.333C5.973 53.334 0 59.307 0 66.667S5.973 80 13.333 80" fill="#0ACF83"/><path d="M0 40c0-7.36 5.973-13.333 13.333-13.333h13.334v26.666H13.333C5.973 53.333 0 47.36 0 40" fill="#A259FF"/><path d="M0 13.333C0 5.973 5.973 0 13.333 0h13.334v26.667H13.333C5.973 26.667 0 20.693 0 13.333" fill="#F24E1E"/><path d="M26.667 0H40c7.36 0 13.333 5.973 13.333 13.333S47.36 26.667 40 26.667H26.667z" fill="#FF7262"/><path d="M53.333 40c0 7.36-5.973 13.333-13.333 13.333S26.667 47.36 26.667 40 32.64 26.667 40 26.667 53.333 32.64 53.333 40" fill="#1ABCFE"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h53.333v80H0z"/></clipPath></defs></svg>
+                        <!-- Flowbite -->
+                        <img class="w-[72px] h-[72px]" src="./assets/images/icons/flowbite-icon.png" width="72" height="72" alt="flowbite icon"/>
+                        <!-- Tailwind CSS -->
+                        <img class="w-[228px] h-[128px] col-span-2" src="./assets/images/icons/tailwind-icon.png" width="256" height="128" alt="tailwind icon"/>
+                        <!-- Javascript -->
+                        <svg class="col-span-2" xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 1052 1052"><path fill="#f0db4f" d="M0 0h1052v1052H0z"/><path d="M965.9 801.1c-7.7-48-39-88.3-131.7-125.9-32.2-14.8-68.1-25.399-78.8-49.8-3.8-14.2-4.3-22.2-1.9-30.8 6.9-27.9 40.2-36.6 66.6-28.6 17 5.7 33.1 18.801 42.8 39.7 45.4-29.399 45.3-29.2 77-49.399-11.6-18-17.8-26.301-25.4-34-27.3-30.5-64.5-46.2-124-45-10.3 1.3-20.699 2.699-31 4-29.699 7.5-58 23.1-74.6 44-49.8 56.5-35.6 155.399 25 196.1 59.7 44.8 147.4 55 158.6 96.9 10.9 51.3-37.699 67.899-86 62-35.6-7.4-55.399-25.5-76.8-58.4-39.399 22.8-39.399 22.8-79.899 46.1 9.6 21 19.699 30.5 35.8 48.7 76.2 77.3 266.899 73.5 301.1-43.5 1.399-4.001 10.6-30.801 3.199-72.101m-394-317.6h-98.4c0 85-.399 169.4-.399 254.4 0 54.1 2.8 103.7-6 118.9-14.4 29.899-51.7 26.2-68.7 20.399-17.3-8.5-26.1-20.6-36.3-37.699-2.8-4.9-4.9-8.7-5.601-9-26.699 16.3-53.3 32.699-80 49 13.301 27.3 32.9 51 58 66.399 37.5 22.5 87.9 29.4 140.601 17.3 34.3-10 63.899-30.699 79.399-62.199 22.4-41.3 17.6-91.3 17.4-146.6.5-90.2 0-180.4 0-270.9" fill="#323330"/></svg>
+                    </div>
+                </div>
+            </section>
+
+            <section class= "border-b-4 border-zinc-900">
+                <div class="w-2/4 flex flex-col my-20 gap-20 justify-center align-center mx-auto">
+                    <div class="w-96 mx-auto flex flex-col justify-center align-center gap-2">
+                        <h2 class="w-auto text-center text-5xl">Contacts</h2>
+                        <p class="w-auto text-center text-xl text-zinc-500">
+                            Keep in touch with the developers that make 
+                            <span class="text-white">Gamer</span><span class="text-red-600">Lore</span>
+                            possible
+                        </p>
+                    </div>
+    
+                    <div class="flex gap-20 justify-center">
+                        <a class="w-max flex flex-col place-items-center gap-2 text-xl text-zinc-500" href="https://github.com/josefalconGH" target="_blank">
+                            <img class="w-[96px] h-[96px] p-1 rounded-full ring-2 ring-red-600" src="./assets/images/profile-jose-icon.png" alt="Jose Github Icon">
+                            <div>
+                                <span class="text-white">Jose</span>
+                                <span class="text-red-600">Falcon</span>
+                            </div>
+                        </a>
+                        <a class="w-max flex flex-col place-items-center gap-2 text-xl text-zinc-500" href="https://github.com/jmeason" target="_blank">
+                            <img class="w-[96px] h-[96px] p-1 rounded-full ring-2 ring-red-600" src="./assets/images/profile-julia-icon.png" alt="Jose Github Icon">
+                            <div>
+                                <span class="text-white">Julia</span>
+                                <span class="text-red-600">Meason</span>
+                            </div>
+                        </a>
+                        <a class="w-max flex flex-col place-items-center gap-2 text-xl text-zinc-500" href="https://github.com/marcmarino83" target="_blank">
+                            <img class="w-[96px] h-[96px] p-1 rounded-full ring-2 ring-red-600" src="./assets/images/profile-marc-icon.png" alt="Jose Github Icon">
+                            <div>
+                                <span class="text-white">Marc</span>
+                                <span class="text-red-600">Marion</span>
+                            </div>
+                        </a>
+                        <a class="w-max flex flex-col place-items-center gap-2 text-xl text-zinc-500" href="https://github.com/briantib" target="_blank">
+                            <img class="w-[96px] h-[96px] p-1 rounded-full ring-2 ring-red-600" src="./assets/images/profile-brian-icon.png" alt="Jose Github Icon">
+                            <div>
+                                <span class="text-white">Brian</span>
+                                <span class="text-red-600">Tiburcio</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </section>
         </main>
 

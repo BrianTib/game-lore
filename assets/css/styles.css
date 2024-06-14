@@ -31,8 +31,7 @@ html, body {
 body {
     background: var(--background);
     color: var(--text);
-    font-family: 'Geist', sans-serif;
-    font-weight: 500;
+    font-family: 'Hammersmith One', sans-serif;
     font-size: 18px;
     touch-action: manipulation;
     overflow-x: hidden;
