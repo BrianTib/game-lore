@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamerLore</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+    <!-- Hammersmith Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- Roboto Font -->
-    <link rel="stylesheet" href="./assets/css/fonts.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/valorant.css">
 </head>
     <body>
-        <header class="mb-10">
+        <header>
             <nav class="bg-zinc-950 fixed w-full z-20 top-0 left-0">
                 <div class=
                     "max-w-screen-xl flex flex-wrap items-center justify-between
@@ -19,8 +28,8 @@
                 >
                     <!-- Logo -->
                     <a href="index.html" class="flex items-center rtl:space-x-reverse">
-                        <span class="text-2xl font-semibold whitespace-nowrap text-white">Gamer</span>
-                        <span class="text-red-600 text-2xl font-semibold whitespace-nowrap">Lore</span>
+                        <span class="text-2xl whitespace-nowrap text-white">Gamer</span>
+                        <span class="text-red-600 text-2xl whitespace-nowrap">Lore</span>
                     </a>
                     
                     <!-- Mobile Hamburger Menu -->
@@ -36,19 +45,19 @@
                     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
                         <ul class="font-medium flex flex-col md:flex-row md:space-x-5">
                             <li>
-                                <a href="index.html" class="text-white md:hover:text-red-600" aria-current="page">Home</a>
+                                <a href="index.html" class="text-red-600" aria-current="page">Home</a>
                             </li>
                             <li>
-                                <a href="#" class="text-white md:hover:text-red-600">Franchises</a>
+                                <a href="index.html#franchises" class="text-white md:hover:text-red-600">Franchises</a>
                             </li>
                             <li>
-                                <a href="#" class="text-white md:hover:text-red-600">Facts</a>
+                                <a href="index.html#facts" class="text-white md:hover:text-red-600">Facts</a>
                             </li>
                             <li>
-                                <a href="#" class="text-white md:hover:text-red-600">APIs</a>
+                                <a href="index.html#technologies" class="text-white md:hover:text-red-600">Technologies</a>
                             </li>
                             <li>
-                                <a href="#" class="text-white md:hover:text-red-600">Contact</a>
+                                <a href="index.html#contact" class="text-white md:hover:text-red-600">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -57,19 +66,9 @@
         </header>
         
         <!-- Main content area -->
-        <main class="flex flex-col w-full">
+        <main class="flex flex-col w-full mt-20">
             <section class="relative">
-                <img class="object-cover w-full" src="./assets/images/valorant/valorant-banner.webp" alt="banner">
-                
-                <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
-                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                        Pink to orange
-                    </span>
-                </button>
-            </section>
-
-            <section>
-                <img src="https://static.wikia.nocookie.net/valorant/images/2/24/Breach_Artwork_Full.png" alt="Character Artwork">
+                <img id="agents-banner" src="./assets/images/franchises/valorant.webp" alt="banner">
             </section>
         </main>
 
