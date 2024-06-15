@@ -4,25 +4,20 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1); // capitalize the first letter of the string
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+$(document).ready(function() {
     // setupCollapsible function
     // this function sets up the collapsible sections
     function setupCollapsible() {
-        const collapsibles = document.querySelectorAll(".collapsible");
-        collapsibles.forEach(collapsible => {
-            collapsible.addEventListener("click", function() {
-                this.classList.toggle("active");
-                const content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    // close a collapsible section when another is clicked
-                    document.querySelectorAll(".content").forEach(otherContent => {
-                        otherContent.style.display = "none";
-                    });
-                    content.style.display = "block";
-                }
-            });
+        $(".collapsible").on("click", function() {
+            $(this).toggleClass("active");
+            const content = $(this).next();
+            if (content.css("display") === "block") {
+                content.css("display", "none");
+            } else {
+                // close a collapsible section when another is clicked
+                $(".content").css("display", "none");
+                content.css("display", "block");
+            }
         });
     }
 
@@ -35,51 +30,101 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // group the Pokémon names by the first letter of their name
         const groups = {
-            ab: document.getElementById("group-ab"),
-            cd: document.getElementById("group-cd"),
-            eg: document.getElementById("group-eg"),
-            hj: document.getElementById("group-hj"),
-            km: document.getElementById("group-km"),
-            np: document.getElementById("group-np"),
-            qs: document.getElementById("group-qs"),
-            tv: document.getElementById("group-tv"),
-            wz: document.getElementById("group-wz"),
+            ab: $("#group-ab"),
+            cd: $("#group-cd"),
+            eg: $("#group-eg"),
+            hj: $("#group-hj"),
+            km: $("#group-km"),
+            np: $("#group-np"),
+            qs: $("#group-qs"),
+            tv: $("#group-tv"),
+            wz: $("#group-wz"),
         };
 
+        const groupedPokemon = {
+            ab: [],
+            cd: [],
+            eg: [],
+            hj: [],
+            km: [],
+            np: [],
+            qs: [],
+            tv: [],
+            wz: [],
+        };
+        
         // populate the collapsible sections with the Pokémon names
         pokemonList.forEach(pokemonName => {
             const name = capitalizeFirstLetter(pokemonName.name);
-            let group;
-            if (name.match(/^[A-Ba-b]/)) group = groups.ab;
-            else if (name.match(/^[C-Dc-d]/)) group = groups.cd;
-            else if (name.match(/^[E-Ge-g]/)) group = groups.eg;
-            else if (name.match(/^[H-Jh-j]/)) group = groups.hj;
-            else if (name.match(/^[K-Mk-m]/)) group = groups.km;
-            else if (name.match(/^[N-Pn-p]/)) group = groups.np;
-            else if (name.match(/^[Q-Sq-s]/)) group = groups.qs;
-            else if (name.match(/^[T-Vt-v]/)) group = groups.tv;
-            else if (name.match(/^[W-Zw-z]/)) group = groups.wz;
 
-            const pElement = document.createElement("p");
-            pElement.setAttribute("id", "collapsible-search");
-            pElement.classList.add("pokemon-link");
-            pElement.textContent = name;
-            pElement.addEventListener("click", function() {
-                // Close the collapsible section when a p element is clicked
-                const content = this.parentElement;
-                content.style.display = "none";
-                content.previousElementSibling.classList.remove("active");
-            });
-            group.appendChild(pElement);
+            if (name.match(/^[A-Ba-b]/)) groupedPokemon.ab.push(name);
+            else if (name.match(/^[C-Dc-d]/)) groupedPokemon.cd.push(name);
+            else if (name.match(/^[E-Ge-g]/)) groupedPokemon.eg.push(name);
+            else if (name.match(/^[H-Jh-j]/)) groupedPokemon.hj.push(name);
+            else if (name.match(/^[K-Mk-m]/)) groupedPokemon.km.push(name);
+            else if (name.match(/^[N-Pn-p]/)) groupedPokemon.np.push(name);
+            else if (name.match(/^[Q-Sq-s]/)) groupedPokemon.qs.push(name);
+            else if (name.match(/^[T-Vt-v]/)) groupedPokemon.tv.push(name);
+            else if (name.match(/^[W-Zw-z]/)) groupedPokemon.wz.push(name);
         });
+
+        // sort the groupedPokemon arrays and append to the groups
+        Object.keys(groupedPokemon).forEach(groupKey => {
+            groupedPokemon[groupKey].sort().forEach(name => {
+                const pElement = $("<p>")
+                    .attr("id", "collapsible-search")
+                    .addClass("pokemon-link")
+                    .text(name)
+                    .on("click", function() {
+                        // close the collapsible section when a p element is clicked
+                        const content = $(this).parent();
+                        content.css("display", "none");
+                        content.prev().removeClass("active");
+                    });
+                groups[groupKey].append(pElement);
+            });
+        });
+
+        // console log sorted groupedPokemon
+        console.log(groupedPokemon);
     }
 
     // initialize collapsible sections and populate Pokémon names
     setupCollapsible();
     populatePokemonNames();
+
+    // load the last searched Pokémon or Bulbasaur if none is found
+    const lastPokemon = localStorage.getItem('lastPokemon') || 'bulbasaur';
+    $("#pokemon-name").val(lastPokemon);
+    fetchPokemon(new Event('submit'));
 });
 
-// fetchAbilityDescriotion function
+// fetchPokemonGenus function
+// this function fetches the pokemon genus from the API
+async function fetchPokemonGenus(pokemonName) {
+    try {
+        const speciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${pokemonName.toLowerCase()}`;
+        const response = await fetch(speciesUrl);
+
+        // check if the response is ok
+        if (!response.ok) {
+            throw new Error(`Error: Unable to fetch data for ${pokemonName}`);
+        }
+
+        const data = await response.json(); // Convert the response to JSON
+
+        // genus information (in English)
+        const genusEntry = data.genera.find(entry => entry.language.name === "en");
+        const genus = genusEntry ? genusEntry.genus : "Genus information not available";
+
+        return genus;
+    } catch (error) {
+        console.error(error);
+        return "Error fetching genus information";
+    }
+}
+
+// fetchAbilityDescription function
 async function fetchAbilityDescription(url) {
     const response = await fetch(url);
 
@@ -156,9 +201,26 @@ function fetchEvolutionChain(chain) {
 async function fetchPokemon(event) {
     event.preventDefault(); // prevent the default form submission
     
+    // clear all ValueEl elements
+    const idValueEl = $("#pokemon-id-value").text("");
+    const nameValueEl = $("#pokemon-name-value").text("");
+    const spriteEl = $("#pokemon-sprite").attr("src", "");
+    const typeValueEl = $("#pokemon-type-value").text("");
+    const flavorTextValueEl = $("#pokemon-flavor-text-value").text("");
+    const statsValueEl = $("#pokemon-stats-value").text("");
+    const heightValueEl = $("#pokemon-height-value").text("");
+    const weightValueEl = $("#pokemon-weight-value").text("");
+    const abilitiesValueEl = $("#pokemon-abilities-value").text("");
+    const hiddenAbilitiesValueEl = $("#pokemon-hidden-abilities-value").text("");
+    const gameVersionsValueEl = $("#pokemon-versions-value").text("");
+    const evolutionValueEl = $("#pokemon-evolution-value").html("");
+
     try {
-        const name = document.getElementById("pokemon-name").value.toLowerCase(); // convert search input to lowercase
+        const name = $("#pokemon-name").val().toLowerCase(); // convert search input to lowercase
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`); // fetch the searched pokemon data from the API
+
+        // save the current Pokémon to local storage
+        localStorage.setItem('lastPokemon', name);
 
         // check if the response is ok
         if (!response.ok) {
@@ -171,6 +233,7 @@ async function fetchPokemon(event) {
         
         // get pokemon details from data
         const pokemonName = capitalizeFirstLetter(data.name); // get the pokemon name from the data
+        const pokemonGenus = await fetchPokemonGenus(name); // get the pokemon genus from the data
         const pokemonId = data.id; // get the pokemon id from the data
         const pokemonSprite = data.sprites.front_default; // get the pokemon sprite from the data
         const pokemonType = data.types.map(typeInfo => capitalizeFirstLetter(typeInfo.type.name)).join(', ');
@@ -184,85 +247,112 @@ async function fetchPokemon(event) {
             const name = capitalizeFirstLetter(abilityInfo.ability.name); // get the ability name from the ability info
             const description = await fetchAbilityDescription(abilityInfo.ability.url); // get the ability description from the ability info
 
-            return `${name} - ${description}`; // return the ability name and description
+            return { name, description }; // return the ability name and description as an object
         }));
 
         // filter abilities to display the description 
-        const pokemonAbilities = abilityDescrip.filter((_, index) => !data.abilities[index].is_hidden).join(', ');
+        const pokemonAbilities = abilityDescrip.filter((_, index) => !data.abilities[index].is_hidden);
         // filter hidden abilities to display the description
-        const pokemonHiddenAbilities = abilityDescrip.filter((_, index) => data.abilities[index].is_hidden).join(', ');
+        const pokemonHiddenAbilities = abilityDescrip.filter((_, index) => data.abilities[index].is_hidden);
 
         // display the search result header
-        const searchHeaderEl = document.getElementById("search-result-header");
-        searchHeaderEl.textContent = `Search result for ${pokemonName}:`;
-        searchHeaderEl.style.display = "block";
+        const searchHeaderEl = $("#search-result-header");
+        // display what kind of pokemon it is along with it's name, for example "Bulbasaur, seed pokemon"
+        searchHeaderEl.text(`${pokemonName}, ${pokemonGenus}`);
+        searchHeaderEl.html(searchHeaderEl.text().replace(pokemonGenus, `<i class="font-light">${pokemonGenus}</i>`));
+
+        searchHeaderEl.css("display", "block");
 
         // set and display the pokemon id
-        const idEl = document.getElementById("pokemon-id");
-        const idValueEl = document.getElementById("pokemon-id-value");
-        idValueEl.textContent = pokemonId;
-        idEl.style.display = "block";
+        // if id is less than 5 digits, add leading zeros
+        if (pokemonId < 10) {
+            idValueEl.text(`#000${pokemonId}`);
+        } else if (pokemonId < 100) {
+            idValueEl.text(`#00${pokemonId}`);
+        } else {
+            idValueEl.text(`#0${pokemonId}`);
+        }
+        $("#pokemon-id").css("display", "block");
 
         // set and display the pokemon name
-        const nameEl = document.getElementById("pokemon-name-display");
-        const nameValueEl = document.getElementById("pokemon-name-value");
-        nameValueEl.textContent = pokemonName;
-        nameEl.style.display = "block";
+        nameValueEl.text(pokemonName || "No information found");
+        $("#pokemon-name-display").css("display", "block");
+
+        // Set and display the pokemon genus
+        $("#pokemon-genus-value").text(pokemonGenus || "No information found");
+        $("#pokemon-genus").css("display", "block");
         
         // set and display the pokemon sprite
-        const spriteEl = document.getElementById("pokemon-sprite");
-        spriteEl.src = pokemonSprite;
-        spriteEl.style.display = "block";
+        spriteEl.attr("src", pokemonSprite || "");
+        spriteEl.css("display", "block");
 
         // set and display the pokemon type
-        const typeEl = document.getElementById("pokemon-type");
-        const typeValueEl = document.getElementById("pokemon-type-value");
-        typeValueEl.textContent = pokemonType;
-        typeEl.style.display = "block";
+        typeValueEl.text(pokemonType || "No information found");
+        $("#pokemon-type").css("display", "block");
 
         // fetch and display the flavor text
         const flavorTexts = await fetchFlavorText(name);
-        const flavorTextEl = document.getElementById("pokemon-flavor-text");
-        const flavorTextValueEl = document.getElementById("pokemon-flavor-text-value");
-        flavorTextValueEl.innerHTML = flavorTexts.map(text => `<p>${text}</p>`).join('');
-        flavorTextEl.style.display = "block";
+        flavorTextValueEl.text(flavorTexts.length > 0 ? flavorTexts.map(text => `${text}`).join('') : "No information found");
+        $("#pokemon-flavor-text").css("display", "block");
 
         // set and display the pokemon stats
-        const statsEl = document.getElementById("pokemon-stats");
-        const statsValueEl = document.getElementById("pokemon-stats-value");
-        statsValueEl.textContent = pokemonStats;
-        statsEl.style.display = "block";
+        statsValueEl.text(pokemonStats || "No information found");
+        $("#pokemon-stats").css("display", "block");
 
         // set and display the pokemon height
-        const heightEl = document.getElementById("pokemon-height");
-        const heightValueEl = document.getElementById("pokemon-height-value");
-        heightValueEl.textContent = pokemonHeight + " m";
-        heightEl.style.display = "block";
+        heightValueEl.text(pokemonHeight ? pokemonHeight + " m" : "No information found");
+        $("#pokemon-height").css("display", "block");
 
         // set and display the pokemon weight
-        const weightEl = document.getElementById("pokemon-weight");
-        const weightValueEl = document.getElementById("pokemon-weight-value");
-        weightValueEl.textContent = pokemonWeight + " kg";
-        weightEl.style.display = "block";
+        weightValueEl.text(pokemonWeight ? pokemonWeight + " kg" : "No information found");
+        $("#pokemon-weight").css("display", "block");
 
         // set and display the pokemon abilities
-        const abilitiesEl = document.getElementById("pokemon-abilities");
-        const abilitiesValueEl = document.getElementById("pokemon-abilities-value");
-        abilitiesValueEl.textContent = pokemonAbilities;
-        abilitiesEl.style.display = "block";
+        if (pokemonAbilities.length > 0) {
+            pokemonAbilities.forEach(ability => {
+                const abilityElement = $('<span class="ability-link text-blue-500 underline cursor-pointer">')
+                    .text(ability.name)
+                    .data('description', ability.description)
+                    .on('click', function() {
+                        showAbilityDescription($(this).data('description'));
+                    });
+                if (pokemonAbilities.indexOf(ability) !== pokemonAbilities.length - 1) {
+                    abilitiesValueEl.append(abilityElement).append(', ');
+                } else {
+                    abilitiesValueEl.append(abilityElement);
+                }
+                abilityElement.css("color", "grey");
+            });
+        } else {
+            abilitiesValueEl.text("No abilities found.");
+        }
+        $("#pokemon-abilities").css("display", "block");
 
         // set and display the pokemon hidden abilities
-        const hiddenAbilitiesEl = document.getElementById("pokemon-hidden-abilities");
-        const hiddenAbilitiesValueEl = document.getElementById("pokemon-hidden-abilities-value");
-        hiddenAbilitiesValueEl.textContent = pokemonHiddenAbilities;
-        hiddenAbilitiesEl.style.display = "block";
+        if (pokemonHiddenAbilities.length > 0) {
+            pokemonHiddenAbilities.forEach(hiddenAbility => {
+                const hiddenAbilityElement = $('<span class="ability-link text-blue-500 underline cursor-pointer">')
+                    .text(hiddenAbility.name)
+                    .data('description', hiddenAbility.description)
+                    .on('click', function() {
+                        showAbilityDescription($(this).data('description'));
+                    });
+                if (pokemonHiddenAbilities.indexOf(hiddenAbility) !== pokemonHiddenAbilities.length - 1) {
+                    hiddenAbilitiesValueEl.append(hiddenAbilityElement).append(', ');
+                } else {
+                    hiddenAbilitiesValueEl.append(hiddenAbilityElement);
+                }
+                hiddenAbilityElement.css("color", "grey");
+            });
+        } else {
+            hiddenAbilitiesValueEl.text("No hidden abilities found.");
+        }
+        $("#pokemon-hidden-abilities").css("display", "block");
 
         // fetch and display the game versions
         const gameVersions = await fetchPokemonGameVersions(name);
-        const gameVersionsEl = document.getElementById("pokemon-versions");
-        const gameVersionsValueEl = document.getElementById("pokemon-versions-value");
-        gameVersionsValueEl.textContent = gameVersions.join(', ');
-        gameVersionsEl.style.display = "block";
+        gameVersionsValueEl.text(gameVersions.length > 0 ? gameVersions.join(', ') : "No game versions found.");
+        $("#pokemon-versions").css("display", "block");
 
         // fetch and display the pokemon evolution chain
         const speciesResponse = await fetch(data.species.url); // fetch the species data to get the evolution chain URL
@@ -281,37 +371,53 @@ async function fetchPokemon(event) {
 
         const evolutionChainData = await evolutionChainResponse.json(); // convert the response to JSON
         const evolutionChain = fetchEvolutionChain(evolutionChainData.chain); // get the evolution chain names
-        const evolutionEl = document.getElementById("pokemon-evolution");
-        const evolutionValueEl = document.getElementById("pokemon-evolution-value");
         // set and display the pokemon evolution chain with links
-        evolutionValueEl.innerHTML = evolutionChain.map(name => `<a href="#" class="pokemon-link">${capitalizeFirstLetter(name)}</a>`).join(' -> '); // display the evolution chain names as links
-        evolutionEl.style.display = "block";
+        if (evolutionChain.length > 0) {
+            evolutionValueEl.html(evolutionChain.map(name => `<a href="#" class="pokemon-link pokemon-chain">${capitalizeFirstLetter(name)}</a>`).join(' -> '));
+            $(".pokemon-chain").css("color", "grey");
+            $(".pokemon-chain").css("text-decoration", "underline");
+            $("#pokemon-evolution").css("display", "block");
+        } else {
+            evolutionValueEl.html("No evolution chain found.");
+            $("#pokemon-evolution").css("display", "none");
+        }
     }
     // catch any errors
     catch (error) {
         console.log(error); // log the error to the console
     }
-};
+}
+
+// showAbilityDescription function
+// this function shows the ability description in a modal
+function showAbilityDescription(description) {
+    const modal = $('#ability-modal');
+    modal.find('#ability-modal-content').text(description);
+    modal.removeClass('hidden');
+}
+
+// closeModal function
+// this function hides the modal
+function closeModal() {
+    $('#ability-modal').addClass('hidden');
+}
 
 // delegation for dynamic links on collapsible sections
-document.addEventListener("click", function(event) {
-    // check if the clicked element is a collapsible search link
-    if (event.target.id === "collapsible-search") {
-        const pokemonName = event.target.textContent.toLowerCase();
-        document.getElementById("pokemon-name").value = pokemonName;
-        fetchPokemon(event);
-    }
+$(document).on("click", "#collapsible-search", function(event) {
+    const pokemonName = $(this).text().toLowerCase();
+    $("#pokemon-name").val(pokemonName);
+    fetchPokemon(event);
 });
 
 // delegation for dynamic links on evolution chain
-document.getElementById("pokemon-evolution-value").addEventListener("click", function(event) {
-    // check if the clicked element is a pokemon link
-    if (event.target.classList.contains("pokemon-link")) {
-        const pokemonName = event.target.textContent.toLowerCase();
-        document.getElementById("pokemon-name").value = pokemonName;
-        fetchPokemon(event);
-    }
+$("#pokemon-evolution-value").on("click", ".pokemon-link", function(event) {
+    const pokemonName = $(this).text().toLowerCase();
+    $("#pokemon-name").val(pokemonName);
+    fetchPokemon(event);
 });
 
 // add an event listener to the search button
-document.getElementById("search-button").addEventListener("click", fetchPokemon); // when the search button is clicked, call the fetchPokemon function
+$("#search-button").on("click", fetchPokemon); // when the search button is clicked, call the fetchPokemon function
+
+// add an event listener to the modal close button
+$("#ability-modal-close").on("click", closeModal);
