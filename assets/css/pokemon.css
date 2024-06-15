@@ -1,5 +1,22 @@
+/* hero background */
+.hero-banner {
+background-image: url("../images/pokemon/pokemon-header.jpg");
+background-position: top; /* position background image */
+background-size: cover; /* cover means image will cover the entire container */
+height: 370px; /* height of hero banner */
+position: relative;
+}
+
+h2 {
+    /* limit the length of the box containing the text */
+    width: 95%;
+}
+
+h2 .card-header {
+    width: 100%;
+}
+
 .collapsible {
-    background-color: #808080;
     color: #eeeeee;
     cursor: pointer;
     padding: 12px;
@@ -22,4 +39,16 @@
 
 .content p {
     cursor: pointer;
+}
+
+.wrapper { 
+    width: 100%;
+    overflow-y:scroll; 
+    position:relative;
+    height: 200px;
+}
+
+/* increase the size of the sprite in source #pokemon-sprite by 50% */
+#pokemon-sprite {
+    width: 25%;
 }

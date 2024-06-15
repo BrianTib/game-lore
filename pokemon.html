@@ -18,9 +18,8 @@
     <header>
         <nav class="bg-zinc-950 fixed w-full z-20 top-0 left-0">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4 px-6">
-
                 <!-- Logo -->
-                <a href="https://flowbite.com/" class="flex items-center rtl:space-x-reverse">
+                <a href="#" class="flex items-center rtl:space-x-reverse">
                     <span class="text-2xl font-semibold whitespace-nowrap text-white">Gamer</span>
                     <span class="text-red-600 text-2xl font-semibold whitespace-nowrap">Lore</span>
                 </a>
@@ -47,8 +46,7 @@
                             <a href="#" class="text-white md:hover:text-red-600">Game Versions</a>
                         </li>
                         <li>
-                            <a href="#" class="text-white md:hover:text-red-600">APIs</a>
-                        </li>
+                            <a href="#" class="text-white md:hover:text-red-600">APIs</li>
                         <li>
                             <a href="#" class="text-white md:hover:text-red-600">Contact</a>
                         </li>
@@ -59,93 +57,154 @@
     </header>
 
     <!-- hero image -->
-    <div class="relative w-full mt-5 h-96 overflow-hidden border-b-2 border-gray-500">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-        <img src="./assets/images/pokemon/pokemon-header.jpg" alt="Pokémon Header" class="w-full h-auto object-cover">
-        <div class="absolute inset-0 flex flex-col mt-12 items-center justify-center items-center">
-            <h1 class="text-white text-center text-6xl font-bold">Welcome to Pokémon Game<span class="text-red-600">Lore!</span></h1>
-            <h3 class="text-gray-300 text-xl underline mt-3 p-2 rounded" style="background: radial-gradient(circle, rgba(95, 95, 95, 0.5), transparent);">On this page you can search for Pokédex entries that include types, base stats, abilities, evolution chains, and more!</h3>
-            <h3 class="text-gray-300 text-xl underline mt-1 p-2 rounded" style="background: radial-gradient(circle, rgba(95, 95, 95, 0.5), transparent);">You can also find information about all game-versions of Pokémon!</h3>
+    <div class="relative w-full mt-5 h-96 overflow-hidden border-b-2 border-gray-500 hero-banner">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 flex flex-col mt-12 items-center justify-center">
+            <h1 class="text-white text-center text-6xl font-bold" style="background: radial-gradient(circle, rgba(80, 80, 80, 0.5), transparent);">Welcome to Pokémon Game<span class="text-red-600">Lore!</span></h1>
+            <h3 class="text-gray-300 text-xl underline mt-3 p-2 rounded" style="background: radial-gradient(circle, rgba(80, 80, 80, 0.5), transparent);">On this page you can search for Pokédex entries that include types, base stats, abilities, evolution chains, and more!</h3>
+            <h3 class="text-gray-300 text-xl underline mt-1 p-2 rounded" style="background: radial-gradient(circle, rgba(80, 80, 80, 0.5), transparent);">You can also find information about all game-versions of Pokémon!</h3>
         </div>
     </div>
-    
 
     <!-- main section -->
-    <main class="mx-8 mt-8 text-zinc-600">
-        <form>
-            <input type="text" id="pokemon-name" placeholder="Enter the name of a Pokémon">
-            <button id="search-button">Search</button><br>
-         </form>
+    <main class="mx-8 mt-8 text-gray-500">
+        <form class="mb-6">
+            <input type="text" id="pokemon-name" class="p-1 border border-gray-300 rounded" placeholder="Enter the name of a Pokémon">
+            <button id="search-button" class="ml-2 p-1 px-2 bg-red-600 text-white rounded">Search</button>
+        </form>
 
-        <h2>Pokémon by alphabetical order:</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 text-center">
-            <div class="col-span-1">
-                <button class="collapsible p-2 rounded">Pokémon: A - B</button>
-                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-ab"></div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+            <!-- collapsible lists column -->
+            <div class="justify-center">
+                <h2 class="text-2xl font-bold mb-4">Pokémon by alphabetical order:</h2>
+                <div class="flex flex-col space-y-4 h-100">
+                    <div>
+                        <button class="collapsible p-2 rounded bg-gray-500 w-full text-left">Pokémon: A - B</button>
+                        <div class="content wrapper hidden p-4 rounded" id="group-ab"></div>
+                    </div>
+                    <div>
+                        <button class="collapsible p-2 rounded bg-gray-500 w-full text-left">Pokémon: C - D</button>
+                        <div class="content wrapper hidden p-4 rounded" id="group-cd"></div>
+                    </div>
+                    <div>
+                        <button class="collapsible p-2 rounded bg-gray-500 w-full text-left">Pokémon: E - G</button>
+                        <div class="content wrapper hidden p-4 rounded" id="group-eg"></div>
+                    </div>
+                    <div>
+                        <button class="collapsible p-2 rounded bg-gray-500 w-full text-left">Pokémon: H - J</button>
+                        <div class="content wrapper hidden p-4 rounded" id="group-hj"></div>
+                    </div>
+                    <div>
+                        <button class="collapsible p-2 rounded bg-gray-500 w-full text-left">Pokémon: K - M</button>
+                        <div class="content wrapper hidden p-4 rounded" id="group-km"></div>
+                    </div>
+                    <div>
+                        <button class="collapsible p-2 rounded bg-gray-500 w-full text-left">Pokémon: N - P</button>
+                        <div class="content wrapper hidden p-4 rounded" id="group-np"></div>
+                    </div>
+                    <div>
+                        <button class="collapsible p-2 rounded bg-gray-500 w-full text-left">Pokémon: Q - S</button>
+                        <div class="content wrapper hidden p-4 rounded" id="group-qs"></div>
+                    </div>
+                    <div>
+                        <button class="collapsible p-2 rounded bg-gray-500 w-full text-left">Pokémon: T - V</button>
+                        <div class="content wrapper hidden p-4 rounded" id="group-tv"></div>
+                    </div>
+                    <div>
+                        <button class="collapsible p-2 rounded bg-gray-500 w-full text-left">Pokémon: W - Z</button>
+                        <div class="content wrapper hidden p-4 rounded" id="group-wz"></div>
+                    </div>
+                </div>
             </div>
 
-            <div class="col-span-1">
-                <button class="collapsible p-2 rounded">Pokémon: C - D</button>
-                <div class="content hidden grid grid-cols-2 md:grid-cols-3 gap-4 p-4 rounded" id="group-cd"></div>
-            </div>
+            <!-- <div class="md:col-span-3">
+                <div id="pokemon-data">
+                    <h2 style="display: none" id="search-result-header" class="text-2xl font-bold mb-4"></h2>
+                    <p id="pokemon-id" style="display: none" class="mb-2 font-semibold">ID: <span id="pokemon-id-value" class="font-normal"></span></p>
+                    <p id="pokemon-name-display" style="display: none" class="mb-2 font-semibold">Name: <span id="pokemon-name-value" class="font-normal"></span></p>
+                    <img src="" alt="Pokemon Sprite" id="pokemon-sprite" style="display: none" class="mb-4">
+                    <p id="pokemon-type" style="display:none;" class="mb-2 font-semibold">Type: <span id="pokemon-type-value" class="font-normal"></span></p>
+                    <h2 id="pokemon-flavor-text" style="display: none" class="text-2xl font-bold mb-4">Pokédex Entry: </h2>
+                    <p id="pokemon-flavor-text" style="display: none;" class="mb-2 font-semibold">Text: <span id="pokemon-flavor-text-value" class="font-normal"></span></p>
+                    <p id="pokemon-stats" style="display:none;" class="mb-2 font-semibold">Base Stats: <span id="pokemon-stats-value" class="font-normal"></span></p>
+                    <p id="pokemon-height" style="display: none" class="mb-2 font-semibold">Height: <span id="pokemon-height-value" class="font-normal"></span></p>
+                    <p id="pokemon-weight" style="display: none" class="mb-2 font-semibold">Weight: <span id="pokemon-weight-value" class="font-normal"></span></p>
+                    <p id="pokemon-abilities" style="display:none;" class="mb-2 font-semibold">Abilities: <span id="pokemon-abilities-value" class="font-normal"></span></p>
+                    <p id="pokemon-hidden-abilities" style="display:none;" class="mb-2 font-semibold">Hidden Abilities: <span id="pokemon-hidden-abilities-value" class="font-normal"></span></p>
+                    <p id="pokemon-versions" style="display:none;" class="mb-2 font-semibold">Game Versions: <span id="pokemon-versions-value" class="font-normal"></span></p>
+                    <p id="pokemon-evolution" style="display:none;" class="mb-2 font-semibold">Evolution Chain: <span id="pokemon-evolution-value" class="pokemon-link font-normal"></span></p>
+                </div>
+            </div> -->
 
-            <div class="col-span-1">
-                <button class="collapsible p-2 rounded">Pokémon: E - G</button>
-                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-eg"></div>
-            </div>
-
-            <div class="col-span-1">
-                <button class="collapsible p-2 rounded">Pokémon: H - J</button>
-                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-hj"></div>
-            </div>
-
-            <div class="col-span-1">
-                <button class="collapsible p-2 rounded">Pokémon: K - M</button>
-                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-km"></div>
-            </div>
-
-            <div class="col-span-1">
-                <button class="collapsible p-2 rounded">Pokémon: N - P</button>
-                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-np"></div>
-            </div>
-
-            <div class="col-span-1">
-                <button class="collapsible p-2 rounded">Pokémon: Q - S</button>
-                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-qs"></div>
-            </div>
-
-            <div class="col-span-1">
-                <button class="collapsible p-2 rounded">Pokémon: T - V</button>
-                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-tv"></div>
-            </div>
-
-            <div class="col-span-1">
-                <button class="collapsible p-2 rounded">Pokémon: W - Z</button>
-                <div class="content hidden grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded" id="group-wz"></div>
+            <!-- pokémon data column -->
+            <!-- add a class to reduces the width of the column to 80% and justify the content to the center -->
+            <div class="md:col-span-3">
+                <h2 class="text-2xl font-bold mb-4">Pokédex entry:</h2>
+                <div id="pokemon-data" class="rounded-lg p-2 bg-gray-500 border-2 border-gray-300">
+                    <div class="bg-gray-300 rounded-lg p-2">
+                        <div class="bg-gray-100 rounded-lg px-2">
+                            <div class="flex items-center">
+                                <div>
+                                    <h2 style="display: none" id="search-result-header" class="text-2xl font-bold mb-2"></h2>
+                                </div>
+                                <div>
+                                    <p id="pokemon-id" style="display: none" class="text-2xl font-bold mb-2">ID: <span id="pokemon-id-value" class=" font-bold"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-300 rounded-lg p-2 mt-2">
+                        <div class="bg-gray-100 rounded-lg p-2 flex items-center">
+                            <div>
+                                <div class="flex justify-center">
+                                    <img src="" alt="Pokemon Sprite" id="pokemon-sprite" class="mx-5 mb-4" style="display: none">
+                                </div>
+                                <p id="pokemon-type" style="display:none;" class="mb-2 font-bold">Type: <span id="pokemon-type-value" class="font-light"></span></p>
+                                <p id="pokemon-flavor-text" class="mb-2 font-bold col-span-2" style="display: none;">Text: <span id="pokemon-flavor-text-value" class="font-light"></span></p>
+                                <p id="pokemon-stats" class="mb-2 font-bold" style="display:none;">Base Stats: <span id="pokemon-stats-value" class="font-light"></span></p>
+                                <p id="pokemon-height" class="mb-2 font-bold" style="display: none">Height: <span id="pokemon-height-value" class="font-light"></span></p>
+                                <p id="pokemon-weight" class="mb-2 font-bold" style="display: none">Weight: <span id="pokemon-weight-value" class="font-light"></span></p>
+                                <p id="pokemon-abilities" class="mb-2 font-bold col-span-2" style="display:none;">Abilities: <span id="pokemon-abilities-value" class="font-light"></span></p>
+                                <p id="pokemon-hidden-abilities" class="mb-2 font-bold col-span-2" style="display:none;">Hidden Abilities: <span id="pokemon-hidden-abilities-value" class="font-light"></span></p>
+                                <p id="pokemon-versions" class="mb-2 font-bold col-span-2" style="display:none;">Game Versions: <span id="pokemon-versions-value" class="font-light"></span></p>
+                                <p id="pokemon-evolution" class="mb-2 font-bold col-span-2" style="display:none;">Evolution Chain: <span id="pokemon-evolution-value" class="pokemon-link font-light"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <div id="pokemon-data">
-            <h2 style="display: none" id="search-result-header"></h2>
-            <p id="pokemon-id" style="display: none">ID: <span id="pokemon-id-value"></span></p>
-            <p id="pokemon-name-display" style="display: none">Name: <span id="pokemon-name-value"></span></p>
-            <img src="" alt="Pokemon Sprite" id="pokemon-sprite" style="display: none">
-            <p id="pokemon-type" style="display:none;">Type: <span id="pokemon-type-value"></span></p>
-            <div id="pokemon-flavor-text" style="display: none;">
-                <h3>Pokédex Entry:</h3>
-                <div id="pokemon-flavor-text-value"></div>
-            </div>
-            <p id="pokemon-stats" style="display:none;">Base Stats: <span id="pokemon-stats-value"></span></p>
-            <p id="pokemon-height" style="display: none">Height: <span id="pokemon-height-value"></span></p>
-            <p id="pokemon-weight" style="display: none">Weight: <span id="pokemon-weight-value"></span></p>
-            <p id="pokemon-abilities" style="display:none;">Abilities: <span id="pokemon-abilities-value"></span></p>
-            <p id="pokemon-hidden-abilities" style="display:none;">Hidden Abilities: <span id="pokemon-hidden-abilities-value"></span></p>
-            <p id="pokemon-versions" style="display:none;">Game Versions: <span id="pokemon-versions-value"></span></p>
-            <p id="pokemon-evolution" style="display:none;">Evolution Chain: <span id="pokemon-evolution-value" class="pokemon-link"></span></p>
+
+        <!-- pokémon game version section -->
+        <div class="pt-6">
+            <h2 class="text-2xl font-bold mb-4">Info about Pokémon game versions: </h2>
         </div>
     </main>
 
-    <!-- footer section -->
+    <!-- tailwind modal -->
+    <div class="relative z-10 hidden" id="ability-modal" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <!-- background backdrop, show/hide based on modal state. -->
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+          <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+            <!-- modal panel, show/hide based on modal state. -->
+            <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
+              <div class="bg-white px-3 pb-3 pt-6 sm:p-3 sm:pb-3">
+                <div class="sm:flex sm:items-start">
+                  <div class="mt-3 text-center sm:ml-2 sm:mt-0 sm:text-left">
+                    <h3 class="text-base text-2xl leading-6 text-zinc-600" id="modal-title">Ability Description:</h3>
+                    <div class="mt-2">
+                      <p class="text-sm text-zinc-500" id="ability-modal-content"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-gray-50 px-2 py-2 sm:flex sm:flex-row-reverse sm:px-2">
+                <button type="button" class="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto" id="ability-modal-close">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- JQuery 3.7.1 -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -154,5 +213,4 @@
     <!-- link to the pokemon.css file -->
     <link rel="stylesheet" href="./assets/css/pokemon.css">
 </body>
-
 </html>
