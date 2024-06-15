@@ -30,7 +30,7 @@ function displayHostileMobData(mob) {
 
     hostileMobSectionEl.removeClass("hidden");
     hostileMobSectionEl.html(`
-        <div class="bg-slate-100 bg-opacity-50 rounded-lg p-2 text-black">
+        <div class="bg-zinc-800 bg-opacity-75 rounded-lg p-2 text-white">
             <ul>
                 <p>Name: ${mob.name}</p>
                 <p>Health: ${mob.health}</p>
@@ -73,7 +73,7 @@ function displayPassiveMobData(mob) {
 
     passiveMobSectionEl.removeClass("hidden");
     passiveMobSectionEl.html(`
-        <div class="bg-slate-100 bg-opacity-50 rounded-lg p-2 text-black">
+        <div class="bg-zinc-800 bg-opacity-75 rounded-lg p-2 text-white">
             <ul>
                 <p>Name: ${mob.name}</p>
                 <p>Health: ${mob.health}</p>
