@@ -5,76 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GamerLore</title>
 
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+    <!-- Hammersmith Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
+
     <!-- Roboto Font -->
-    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
-    <body>
-        <header class="mb-10">
-            <nav class="bg-zinc-950 fixed w-full z-20 top-0 left-0">
-                <div class=
-                    "max-w-screen-xl flex flex-wrap items-center justify-between
-                    mx-auto py-4 px-6"
-                >
-                    <!-- Logo -->
-                    <a href="index.html" class="flex items-center rtl:space-x-reverse">
-                        <span class="text-2xl font-semibold whitespace-nowrap text-white">Gamer</span>
-                        <span class="text-red-600 text-2xl font-semibold whitespace-nowrap">Lore</span>
-                    </a>
-                    
-                    <!-- Mobile Hamburger Menu -->
-                    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-                        <!-- Screen Reader text -->
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                        </svg>
-                    </button>
-        
-                    <!-- Nav Elements-->
-                    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                        <ul class="font-medium flex flex-col md:flex-row md:space-x-5">
-                            <li>
-                                <a href="index.html" class="text-white md:hover:text-red-600" aria-current="page">Home</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-white md:hover:text-red-600">Franchises</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-white md:hover:text-red-600">Facts</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-white md:hover:text-red-600">APIs</a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-white md:hover:text-red-600">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </header>
-        
-        <!-- Main content area -->
-        <main class="flex flex-col w-full">
-            <section class="relative">
-                <img class="object-cover w-full" src="./assets/images/valorant/valorant-banner.webp" alt="banner">
+
+<body class="flex flex-col min-h-screen">
+    <header>
+        <nav class="bg-zinc-950 fixed w-full z-20 top-0 left-0 h-15">
+            <div class=
+                "max-w-screen-xl flex flex-wrap items-center justify-between
+                mx-auto py-4 px-6"
+            >
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center rtl:space-x-reverse">
+                    <span class="text-2xl whitespace-nowrap text-white">Gamer</span>
+                    <span class="text-red-600 text-2xl whitespace-nowrap">Lore</span>
+                </a>
                 
-                <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-pink-500 to-orange-400 group-hover:from-pink-500 group-hover:to-orange-400 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800">
-                    <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                        Pink to orange
-                    </span>
+                <!-- Mobile Hamburger Menu -->
+                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                    <!-- Screen Reader text -->
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
                 </button>
-            </section>
+    
+                <!-- Nav Elements-->
+                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                    <ul class="font-medium flex flex-col md:flex-row md:space-x-5">
+                        <li>
+                            <a href="index.html" class="text-red-600" aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a href="index.html#franchises" class="text-white md:hover:text-red-600">Franchises</a>
+                        </li>
+                        <li>
+                            <a href="index.html#facts" class="text-white md:hover:text-red-600">Facts</a>
+                        </li>
+                        <li>
+                            <a href="index.html#technologies" class="text-white md:hover:text-red-600">Technologies</a>
+                        </li>
+                        <li>
+                            <a href="index.html#contact" class="text-white md:hover:text-red-600">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Main content area -->
+    <main class="w-full mt-16">
+        <section class="relative flex align-center h-[850px] bg-cover bg-center" style="background-image: url('./assets/images/franchises/valorant.webp');">
+            <!-- Semi-transparent overlay -->
+            <div class="absolute inset-0 bg-black opacity-75"></div>
 
-            <section>
-                
-            </section>
-        </main>
-
-        <!-- JQuery 3.7.1 -->
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-        <script type="module" src="./assets/js/valorant.js"></script>
-    </body>
+            <!-- Overlay content -->
+            <div class=
+                "relative flex m-auto w-auto h-96 text-white
+                rounded-xl overflow-hidden"
+            >
+                <!-- Agent Artwork -->
+                <div class=
+                    "w-[300px] bg-gradient-to-b rounded-xl rounded-r-none
+                    from-orange-500/[0.3] to-black/[0.5] border-2 border-solid
+                    border-orange-500 border-r-0"
+                >
+                    <img
+                        class="h-full w-full object-cover"
+                        src="http://vps-f1e41b99.vps.ovh.ca:3001/images/valorant/agents/Brimstone_Artwork_Full.webp"
+                        width="1000"
+                        height="908"
+                        alt="Agent Icon"
+                    >
+                </div>
+                <div class="w-[550px] bg-black/[0.75] rounded-xl rounded-l-none
+                    border-2 border-solid border-zinc-600 border-l-0 p-4"
+                >
+                    <div class="relative h-28">
+                        <img
+                            class="w-[100px] h-[100px] mr-3 float-left object-cover"
+                            src="http://vps-f1e41b99.vps.ovh.ca:3001/images/valorant/agents/Brimstone_icon.webp"
+                            width="1000"
+                            height="1000"
+                            alt="Agent Icon"
+                        >
+                        <div class="h-full flex flex-col justify-center leading-5">
+                            <h3 class="text-4xl">Brimstone</h3>
+                            <h4 class="text-zinc-400">Controller</h4>
+                            <h4 class="text-zinc-400">United States</h4>
+                        </div>
+                        <div class="absolute h-14 flex justify-center items-center gap-5 top-0 right-0">
+                            <h4 class="text-zinc-400 text-3xl">#01</h4>
+                            <img
+                                class="w-[50px] h-[50px] mr-3 object-cover"
+                                src="http://vps-f1e41b99.vps.ovh.ca:3001/images/valorant/roles/ControllerClassSymbol.webp"
+                                width="1000"
+                                height="1000"
+                                alt="Agent Icon"
+                            >
+                        </div>
+                    </div>
+                    <h3 class="text-2xl text-zinc-400 text-white mb-5">Voiced By: <span class="text-white">Steve Blum</span></h3>
+                    <p class="text-3xl">
+                        A veteran and commander from the United States,
+                        Brimstone brings a range of abilities to the field with
+                        military precision.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
 </html>
