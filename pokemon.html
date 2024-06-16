@@ -26,7 +26,7 @@
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4 px-6">
                 <!-- Logo -->
                 <a href="#" class="flex items-center rtl:space-x-reverse">
-                    <span class="text-2xl font-semibold whitespace-nowrap text-white">Gamer</span>
+                    <span class="text-2xl font-semibold whitespace-nowrap text-white">Game</span>
                     <span class="text-red-600 text-2xl font-semibold whitespace-nowrap">Lore</span>
                 </a>
                 
@@ -65,7 +65,7 @@
     <!-- hero image -->
     <div class="relative w-full mt-5 h-96 overflow-hidden border-b-2 border-gray-500 hero-banner">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 flex flex-col mt-12 items-center justify-center">
-            <h1 class="text-white text-center text-6xl font-bold" style="background: radial-gradient(circle, rgba(80, 80, 80, 0.5), transparent);">Welcome to Pokémon Gamer<span class="text-red-600">Lore!</span></h1>
+            <h1 class="text-white text-center text-6xl font-bold" style="background: radial-gradient(circle, rgba(80, 80, 80, 0.5), transparent);">Welcome to Pokémon Game<span class="text-red-600">Lore!</span></h1>
             <h3 class="text-gray-300 text-xl underline mt-3 p-2 rounded" style="background: radial-gradient(circle, rgba(80, 80, 80, 0.5), transparent);">On this page you can search for Pokédex entries that include types, base stats, abilities, evolution chains, and more!</h3>
             <h3 class="text-gray-300 text-xl underline mt-1 p-2 rounded" style="background: radial-gradient(circle, rgba(80, 80, 80, 0.5), transparent);">You can also find information about all game-versions of Pokémon!</h3>
         </div>
@@ -75,8 +75,8 @@
     <main class="mx-8 mt-8 text-gray-400">
         <div id="pokedex">
             <form class="mb-4">
-                <input type="text" id="pokemon-name" class="px-2 py-1 rounded text-gray-500" placeholder="Enter the name of a Pokémon">
-                <button id="search-button" class="text-white bg-gradient-to-br from-red-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-orange-400 dark:focus:ring-orange-600 font-medium rounded-lg text-sm px-4 py-2.5 text-center me-2 mb-2">Search</button>
+                <input type="text" id="pokemon-name" class="px-2 py-1 rounded text-gray-500 focus:border-orange-500" placeholder="Enter the name of a Pokémon">
+                <button id="search-button" class="text-white bg-gradient-to-br from-red-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-orange-500 font-medium rounded-lg text-sm px-4 py-2.5 text-center me-2 mb-2">Search</button>
             </form>
     
             <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
@@ -85,39 +85,39 @@
                     <h2 class="text-2xl font-bold mb-4">Pokémon by alphabetical order:</h2>
                     <div class="flex flex-col space-y-4 h-100">
                         <div>
-                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: A - B</button>
+                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: A - B</button>
                             <div class="content wrapper hidden p-4 rounded" id="group-ab"></div>
                         </div>
                         <div>
-                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: C - D</button>
+                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: C - D</button>
                             <div class="content wrapper hidden p-4 rounded" id="group-cd"></div>
                         </div>
                         <div>
-                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: E - G</button>
+                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: E - G</button>
                             <div class="content wrapper hidden p-4 rounded" id="group-eg"></div>
                         </div>
                         <div>
-                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: H - J</button>
+                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: H - J</button>
                             <div class="content wrapper hidden p-4 rounded" id="group-hj"></div>
                         </div>
                         <div>
-                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: K - M</button>
+                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: K - M</button>
                             <div class="content wrapper hidden p-4 rounded" id="group-km"></div>
                         </div>
                         <div>
-                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: N - P</button>
+                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: N - P</button>
                             <div class="content wrapper hidden p-4 rounded" id="group-np"></div>
                         </div>
                         <div>
-                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: Q - S</button>
+                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: Q - S</button>
                             <div class="content wrapper hidden p-4 rounded" id="group-qs"></div>
                         </div>
                         <div>
-                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: T - V</button>
+                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: T - V</button>
                             <div class="content wrapper hidden p-4 rounded" id="group-tv"></div>
                         </div>
                         <div>
-                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-800 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: W - Z</button>
+                            <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: W - Z</button>
                             <div class="content wrapper hidden p-4 rounded" id="group-wz"></div>
                         </div>
                     </div>
@@ -127,8 +127,8 @@
                 <!-- add a class to reduces the width of the column to 80% and justify the content to the center -->
                 <div class="md:col-span-3 text-gray-500">
                     <h2 class="text-2xl font-bold text-gray-400 mb-4">Pokédex entry:</h2>
-                    <div id="pokemon-data" class="rounded-lg p-2 bg-gray-500 border-2 border-gray-300">
-                        <div class="bg-gray-300 rounded-lg p-2">
+                    <div id="pokemon-data" class="rounded-lg p-2 bg-gradient-to-b from-gray-800 to-gray-400 border-2 border-gray-400">
+                        <div class="bg-gray-400 rounded-lg p-2">
                             <div class="bg-gray-100 rounded-lg px-2">
                                 <div class="flex items-center">
                                     <div>
@@ -140,7 +140,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-gray-300 rounded-lg p-2 mt-2">
+                        <div class="bg-gray-400 rounded-lg p-2 mt-2">
                             <div class="bg-gray-100 rounded-lg p-2 flex items-center">
                                 <div>
                                     <div class="flex justify-center">
