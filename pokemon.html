@@ -72,16 +72,16 @@
     </div>
 
     <!-- main section -->
-    <main class="mx-8 mt-8 text-gray-400">
-        <div id="pokedex">
-            <form class="mb-4">
+    <main class="mt-8 text-gray-400">
+        <section id="pokedex" class="w-full border-b-4 border-zinc-900">
+            <form class="mx-8 mb-4">
                 <input type="text" id="pokemon-name" class="px-2 py-1 rounded text-gray-500 focus:border-orange-500" placeholder="Enter the name of a Pokémon">
                 <button id="search-button" class="text-white bg-gradient-to-br from-red-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-orange-500 font-medium rounded-lg text-sm px-4 py-2.5 text-center me-2 mb-2">Search</button>
             </form>
     
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-5">
+            <div class="grid grid-cols-1 md:grid-cols-4 mb-8">
                 <!-- collapsible lists column -->
-                <div class="justify-center">
+                <div class="justify-center mx-8">
                     <h2 class="text-2xl font-bold mb-4">Pokémon by alphabetical order:</h2>
                     <div class="flex flex-col space-y-4 h-100">
                         <div>
@@ -125,22 +125,22 @@
     
                 <!-- pokémon data column -->
                 <!-- add a class to reduces the width of the column to 80% and justify the content to the center -->
-                <div class="md:col-span-3 text-gray-700">
+                <div class="md:col-span-3 text-gray-700 mx-8">
                     <h2 class="text-2xl font-bold text-gray-400 mb-4">Pokédex entry:</h2>
                     <div id="pokemon-data" class="rounded-lg p-2 bg-gradient-to-b from-gray-800 to-gray-400 border-2 border-gray-400">
                         <div class="bg-gray-400 rounded-lg p-2">
                             <div class="bg-gray-100 rounded-lg px-2">
-                                <div class="flex items-center">
+                                <div class="flex items-center space-x-8">
                                     <div>
-                                        <h2 style="display: none" id="search-result-header" class="text-2xl font-bold mb-2"></h2>
+                                        <h2 style="display: none" id="search-result-header" class="text-2xl font-bold my-4"></h2>
                                     </div>
                                     <div>
-                                        <p id="pokemon-id" style="display: none" class="text-2xl font-bold mb-2">ID: <span id="pokemon-id-value" class="font-thin"></span></p>
+                                        <p id="pokemon-id" style="display: none" class="text-2xl font-bold my-4">ID: <span id="pokemon-id-value" class="font-thin"></span></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-gray-400 rounded-lg p-2 mt-2">
+                        <div class="bg-gradient-to-b from-gray-400 to-gray-800 rounded-lg p-2 mt-2">
                             <div class="bg-gray-100 rounded-lg p-2 flex items-center">
                                 <div>
                                     <div class="flex justify-center">
@@ -161,10 +161,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- pokémon game version section -->
-        <section id="version-section" class="pt-6">
+        <section id="version-section" class="mx-8 mt-6">
             <h2 class="text-2xl font-bold mb-4">Info about Pokémon game versions: </h2>
         </section>
     </main>
@@ -177,7 +177,7 @@
                 <div class="w-96 flex flex-col justify-center items-center gap-2">
                     <h2 class="w-auto text-center text-5xl">API</h2>
                     <p class="w-auto text-center text-xl text-zinc-500">
-                        Pokémon <span class="text-white">Gamer</span><span class="text-red-600">Lore</span> uses the Pokémon API, PokéAPI
+                        Pokémon <span class="text-white">Game</span><span class="text-red-600">Lore</span> uses the Pokémon API, PokéAPI
                     </p>
                 </div>
                 <div class="max-w-xl grid grid-cols-1 place-items-center gap-10">
@@ -194,7 +194,7 @@
                 <div class="w-96 flex flex-col justify-center items-center gap-2">
                     <h2 class="w-auto text-center text-5xl">Contact</h2>
                     <p class="w-auto text-center text-xl text-zinc-500">
-                        Keep in touch with the developer that makes Pokémon <span class="text-white">Gamer</span><span class="text-red-600">Lore</span>
+                        Keep in touch with the developer that makes Pokémon <span class="text-white">Game</span><span class="text-red-600">Lore</span>
                     </p>
                 </div>
                 <div class="flex gap-20 justify-center">
