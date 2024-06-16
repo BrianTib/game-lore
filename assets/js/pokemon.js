@@ -259,7 +259,7 @@ async function fetchPokemon(event) {
         const searchHeaderEl = $("#search-result-header");
         // display what kind of pokemon it is along with it's name, for example "Bulbasaur, seed pokemon"
         searchHeaderEl.text(`${pokemonName}, ${pokemonGenus}`);
-        searchHeaderEl.html(searchHeaderEl.text().replace(pokemonGenus, `<i class="font-thin">${pokemonGenus}</i>`));
+        searchHeaderEl.html(searchHeaderEl.text().replace(pokemonGenus, `<i class="font-thin text-gray-500">${pokemonGenus}</i>`));
 
         searchHeaderEl.css("display", "block");
 
@@ -321,7 +321,7 @@ async function fetchPokemon(event) {
                 } else {
                     abilitiesValueEl.append(abilityElement);
                 }
-                abilityElement.css("color", "darkgray ");
+                abilityElement.css("color", "#A0A0A0");
             });
         } else {
             abilitiesValueEl.text("No abilities found.");
@@ -342,7 +342,7 @@ async function fetchPokemon(event) {
                 } else {
                     hiddenAbilitiesValueEl.append(hiddenAbilityElement);
                 }
-                hiddenAbilityElement.css("color", "darkgray ");
+                hiddenAbilityElement.css("color", "#A0A0A0");
             });
         } else {
             hiddenAbilitiesValueEl.text("No hidden abilities found.");
@@ -374,7 +374,7 @@ async function fetchPokemon(event) {
         // set and display the pokemon evolution chain with links
         if (evolutionChain.length > 0) {
             evolutionValueEl.html(evolutionChain.map(name => `<a href="#" class="pokemon-link pokemon-chain">${capitalizeFirstLetter(name)}</a>`).join(' -> '));
-            $(".pokemon-chain").css("color", "darkgray ");
+            $(".pokemon-chain").css("color", "#A0A0A0");
             $(".pokemon-chain").css("text-decoration", "underline");
             $("#pokemon-evolution").css("display", "block");
         } else {
