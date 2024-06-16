@@ -9,7 +9,7 @@ position: relative;
 
 h2 {
     /* limit the length of the box containing the text */
-    width: 95%;
+    width: 100%;
 }
 
 h2 .card-header {
