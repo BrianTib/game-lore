@@ -13,11 +13,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap" rel="stylesheet">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-
     <!-- Roboto Font -->
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="flex flex-col min-h-screen">
@@ -73,60 +75,98 @@
             <div class="absolute inset-0 bg-black opacity-75"></div>
 
             <!-- Overlay content -->
-            <div class=
-                "relative flex m-auto w-auto h-96 text-white
-                rounded-xl overflow-hidden"
+            <div
+                id="agent-card"
+                class=
+                    "relative flex m-auto w-auto h-96 text-white
+                    rounded-xl overflow-hidden backdrop-blur-sm"
             >
                 <!-- Agent Artwork -->
-                <div class=
-                    "w-[300px] bg-gradient-to-b rounded-xl rounded-r-none
-                    from-orange-500/[0.3] to-black/[0.5] border-2 border-solid
-                    border-orange-500 border-r-0"
+                <div
+                    id="agent-artwork-container"
+                    class="w-[300px] bg-gradient-to-b rounded-xl rounded-r-none from-[#eeeeee55] to-black/[0.4] border-2 border-solid border-[#eee] border-r-0"
                 >
                     <img
+                        id="agent-artwork"
                         class="h-full w-full object-cover"
-                        src="http://vps-f1e41b99.vps.ovh.ca:3001/images/valorant/agents/Brimstone_Artwork_Full.webp"
+                        src="#"
                         width="1000"
                         height="908"
                         alt="Agent Icon"
                     >
                 </div>
-                <div class="w-[550px] bg-black/[0.75] rounded-xl rounded-l-none
+                <div class="w-[550px] bg-black/[0.5] rounded-xl rounded-l-none
                     border-2 border-solid border-zinc-600 border-l-0 p-4"
                 >
                     <div class="relative h-28">
+                        <!-- Agent Icon -->
                         <img
+                            id="agent-icon"
                             class="w-[100px] h-[100px] mr-3 float-left object-cover"
-                            src="http://vps-f1e41b99.vps.ovh.ca:3001/images/valorant/agents/Brimstone_icon.webp"
+                            src="/"
                             width="1000"
                             height="1000"
                             alt="Agent Icon"
                         >
-                        <div class="h-full flex flex-col justify-center leading-5">
-                            <h3 class="text-4xl">Brimstone</h3>
-                            <h4 class="text-zinc-400">Controller</h4>
-                            <h4 class="text-zinc-400">United States</h4>
+                        <div id="agent-info" class="h-full flex flex-col justify-center leading-5">
+                            <button
+                                data-dropdown-toggle="agent-name-dropdown"
+                                type="button"
+                                class=
+                                    "w-max min-w-40 flex gap-4 justify-start align-center 
+                                    focus:ring-0 font-medium rounded-lg text-3xl
+                                    py-2.5 text-left"
+                            >
+                                <h2 id="agent-name">Agent Name</h2>
+                                <svg class="w-4 h-4 my-auto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                                </svg>
+                            </button>
+                                
+                            <!-- Dropdown menu -->
+                            <div
+                                id="agent-name-dropdown"
+                                class=
+                                    "z-10 hidden divide-y divide-gray-100
+                                    rounded-lg shadow w-44 bg-zinc-950
+                                    rounded border-2 border-white
+                                    border-solid max-h-64 overflow-y-scroll"
+                            >
+                                <ul class="py-2 text-base text-white"
+                                    aria-labelledby="dropdown-default-button"
+                                >
+                                </ul>
+                            </div>
+                            
+                            <h4 id="agent-role" class="text-zinc-400">Loading...</h4>
+                            <h4 id="agent-country" class="text-zinc-400">Loading...</h4>
                         </div>
                         <div class="absolute h-14 flex justify-center items-center gap-5 top-0 right-0">
-                            <h4 class="text-zinc-400 text-3xl">#01</h4>
+                            <h4 id="agent-number" class="text-zinc-400 text-3xl">#00</h4>
                             <img
+                                id="agent-role-icon"
                                 class="w-[50px] h-[50px] mr-3 object-cover"
-                                src="http://vps-f1e41b99.vps.ovh.ca:3001/images/valorant/roles/ControllerClassSymbol.webp"
+                                src="#"
                                 width="1000"
                                 height="1000"
                                 alt="Agent Icon"
                             >
                         </div>
                     </div>
-                    <h3 class="text-2xl text-zinc-400 text-white mb-5">Voiced By: <span class="text-white">Steve Blum</span></h3>
-                    <p class="text-3xl">
-                        A veteran and commander from the United States,
-                        Brimstone brings a range of abilities to the field with
-                        military precision.
+                    <h3 class="text-2xl text-zinc-400 text-white mb-5">
+                        Voiced By: <span id="agent-voice-actor" class="text-white">Loading...</span>
+                    </h3>
+                    <p id="agent-description" class="text-3xl">
+                        Loading...
                     </p>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- JQuery 3.7.1 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="./assets/js/valorant.js"></script>
 </body>
 </html>
