@@ -1,5 +1,5 @@
 const API_TOKEN = 'MDc1MGM5YWUtODdlYS00OTE2LWI2NWMtN2RlMGZmYzlmNjlh';
-const baseURL = 'http://vps-f1e41b99.vps.ovh.ca:3001/api/valorant';
+const baseURL = 'http://vps-f1e41b99.vps.ovh.ca:3001';
 
 // Dependencies
 const agentNameMenu = $('#agent-info');
@@ -12,7 +12,7 @@ async function getAgentNames() {
     if (cachedAgents) { return cachedAgents; }
 
     // Get the agent names from the API
-    const request = await fetch(baseURL + '/agents', {
+    const request = await fetch(baseURL + '/api/valorant/agents', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${atob(API_TOKEN)}`
@@ -34,7 +34,7 @@ async function getAgentData(agentName) {
     if (cachedAgent) { return cachedAgent; }
 
     // Get the agent names from the API
-    const request = await fetch(baseURL + `/agents?agent=${agentName}`, {
+    const request = await fetch(baseURL + `/api/valorant/agents?agent=${agentName}`, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${atob(API_TOKEN)}`
@@ -55,10 +55,8 @@ async function getRoleData(roleName) {
     const cachedRole = getFromLocalStorage('role_' + roleName);
     if (cachedRole) { return cachedRole; }
 
-    console.log(baseURL + `/roles?role=${roleName}`);
-
     // Get the role names from the API
-    const request = await fetch(baseURL + `/roles?role=${roleName}`, {
+    const request = await fetch(baseURL + `/api/valorant/roles?role=${roleName}`, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${atob(API_TOKEN)}`
@@ -112,10 +110,10 @@ async function updateAgentCardByName(agentName) {
 
     // Update the card values
     agentNameEl.text(agentName);
-    agentArtworkEl.attr('src', 'http://' + agentData.artwork);
-    agentIconEl.attr('src', 'http://' + agentData.icon);
+    agentArtworkEl.attr('src', baseURL + agentData.artwork);
+    agentIconEl.attr('src', baseURL + agentData.icon);
     agentRoleEl.text(agentData.role);
-    agentRoleIconEl.attr('src', 'http://' + roleData.icon);
+    agentRoleIconEl.attr('src', baseURL + roleData.icon);
     agentCountryEl.text(agentData.origin);
     agentNumberEl.text('#' + agentData.number);
     agentVoiceActorEl.text(agentData.voiceActor);
