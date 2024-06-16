@@ -83,7 +83,7 @@
                 <!-- collapsible lists column -->
                 <div class="justify-center mx-8">
                     <h2 class="text-2xl font-bold mb-4">Pokémon by alphabetical order:</h2>
-                    <div class="flex flex-col space-y-4 h-100">
+                    <div class="flex flex-col space-y-4 h-100 mb-4">
                         <div>
                             <button class="collapsible bg-gradient-to-br from-gray-800 to-gray-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-gray-500 font-medium rounded-lg text-sm px-5 py-2 text-center">Pokémon: A - B</button>
                             <div class="content wrapper hidden p-4 rounded" id="group-ab"></div>
@@ -163,10 +163,159 @@
             </div>
         </section>
 
-        <!-- pokémon game version section -->
+        <!-- Pokémon game version section -->
+        <!-- https://flowbite.com/docs/components/card/ -->
         <section id="version-section" class="mx-8 mt-6">
             <h2 class="text-2xl font-bold mb-4">Info about Pokémon game versions: </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+                <!-- Generation 1 Card -->
+                <div class="max-w-[20rem] bg-white border border-gray-200 rounded-lg shadow bg-gradient-to-br from-gray-800 to-gray-400">
+                    <img class="rounded-t-lg w-full h-48 object-cover" src="./assets/images/pokemon/gen-covers/Gen-1-Cover.jpg" alt="Gen 1 Cover" />
+                    <div class="p-4">
+                        <h5 class="mb-2 text-lg font-bold text-white">Pokémon Generation 1</h5>
+                        <p class="mb-3 text-sm font-normal text-gray-300">Explore the classic first generation of Pokémon games, including Red, Blue, and Yellow versions.</p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-xs font-medium text-center text-white bg-gradient-to-br from-red-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-orange-500 rounded-lg">
+                            Read more
+                            <!-- this is the point of the arrow -->
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Generation 2 Card -->
+                <div class="max-w-[20rem] bg-white border border-gray-200 rounded-lg shadow bg-gradient-to-br from-gray-800 to-gray-400">
+                    <img class="rounded-t-lg w-full h-48 object-cover" src="./assets/images/pokemon/gen-covers/Gen-2-Cover.jpg" alt="Gen 2 Cover" />
+                    <div class="p-4">
+                        <h5 class="mb-2 text-lg font-bold text-white">Pokémon Generation 2</h5>
+                        <p class="mb-3 text-sm font-normal text-gray-300">Explore the second generation of Pokémon games, including Gold, Silver, and Crystal versions.</p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-xs font-medium text-center text-white bg-gradient-to-br from-red-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-orange-500 rounded-lg">
+                            Read more
+                            <!-- this is the point of the arrow -->
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Generation 3 Card -->
+                <div class="max-w-[20rem] bg-white border border-gray-200 rounded-lg shadow bg-gradient-to-br from-gray-800 to-gray-400">
+                    <img class="rounded-t-lg w-full h-48 object-cover" src="./assets/images/pokemon/gen-covers/Gen-3-Cover.jpg" alt="Gen 3 Cover" />
+                    <div class="p-4">
+                        <h5 class="mb-2 text-lg font-bold text-white">Pokémon Generation 3</h5>
+                        <p class="mb-3 text-sm font-normal text-gray-300">Explore the third generation of Pokémon games, including Ruby, Sapphire, and Emerald versions.</p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-xs font-medium text-center text-white bg-gradient-to-br from-red-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-orange-500 rounded-lg">
+                            Read more
+                            <!-- this is the point of the arrow -->
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Generation 4 Card -->
+                <div class="max-w-[20rem] bg-white border border-gray-200 rounded-lg shadow bg-gradient-to-br from-gray-800 to-gray-400">
+                    <img class="rounded-t-lg w-full h-48 object-cover" src="./assets/images/pokemon/gen-covers/Gen-4-Cover.jpg" alt="Gen 4 Cover" />
+                    <div class="p-4">
+                        <h5 class="mb-2 text-lg font-bold text-white">Pokémon Generation 4</h5>
+                        <p class="mb-3 text-sm font-normal text-gray-300">Explore the fourth generation of Pokémon games, including Diamond, Pearl, and Platinum versions.</p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-xs font-medium text-center text-white bg-gradient-to-br from-red-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-orange-500 rounded-lg">
+                            Read more
+                            <!-- this is the point of the arrow -->
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Generation 5 Card -->
+                <div class="max-w-[20rem] bg-white border border-gray-200 rounded-lg shadow bg-gradient-to-br from-gray-800 to-gray-400">
+                    <img class="rounded-t-lg w-full h-48 object-cover" src="./assets/images/pokemon/gen-covers/Gen-5-Cover.jpg" alt="Gen 5 Cover" />
+                    <div class="p-4">
+                        <h5 class="mb-2 text-lg font-bold text-white">Pokémon Generation 5</h5>
+                        <p class="mb-3 text-sm font-normal text-gray-300">Explore the fifth generation of Pokémon games, including Black, White, Black 2, and White 2 versions.</p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-xs font-medium text-center text-white bg-gradient-to-br from-red-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-orange-500 rounded-lg">
+                            Read more
+                            <!-- this is the point of the arrow -->
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Generation 6 Card -->
+                <div class="max-w-[20rem] bg-white border border-gray-200 rounded-lg shadow bg-gradient-to-br from-gray-800 to-gray-400">
+                    <img class="rounded-t-lg w-full h-48 object-cover" src="./assets/images/pokemon/gen-covers/Gen-6-Cover.jpg" alt="Gen 6 Cover" />
+                    <div class="p-4">
+                        <h5 class="mb-2 text-lg font-bold text-white">Pokémon Generation 6</h5>
+                        <p class="mb-3 text-sm font-normal text-gray-300">Explore the sixth generation of Pokémon games, including X and Y versions, and Omega Ruby and Alpha Sapphire remakes.</p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-xs font-medium text-center text-white bg-gradient-to-br from-red-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-orange-500 rounded-lg">
+                            Read more
+                            <!-- this is the point of the arrow -->
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Generation 7 Card -->
+                <div class="max-w-[20rem] bg-white border border-gray-200 rounded-lg shadow bg-gradient-to-br from-gray-800 to-gray-400">
+                    <img class="rounded-t-lg w-full h-48 object-cover" src="./assets/images/pokemon/gen-covers/Gen-7-Cover.jpg" alt="Gen 7 Cover" />
+                    <div class="p-4">
+                        <h5 class="mb-2 text-lg font-bold text-white">Pokémon Generation 7</h5>
+                        <p class="mb-3 text-sm font-normal text-gray-300">Explore the seventh generation of Pokémon games, including Sun, Moon, Ultra Sun, and Ultra Moon versions.</p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-xs font-medium text-center text-white bg-gradient-to-br from-red-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-orange-500 rounded-lg">
+                            Read more
+                            <!-- this is the point of the arrow -->
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Generation 8 Card -->
+                <div class="max-w-[20rem] bg-white border border-gray-200 rounded-lg shadow bg-gradient-to-br from-gray-800 to-gray-400">
+                    <img class="rounded-t-lg w-full h-48 object-cover" src="./assets/images/pokemon/gen-covers/Gen-8-Cover.jpg" alt="Gen 8 Cover" />
+                    <div class="p-4">
+                        <h5 class="mb-2 text-lg font-bold text-white">Pokémon Generation 8</h5>
+                        <p class="mb-3 text-sm font-normal text-gray-300">Explore the eighth generation of Pokémon games, including Sword, Shield, and their expansion packs.</p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-xs font-medium text-center text-white bg-gradient-to-br from-red-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-orange-500 rounded-lg">
+                            Read more
+                            <!-- this is the point of the arrow -->
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Generation 9 Card -->
+                <div class="max-w-[20rem] bg-white border border-gray-200 rounded-lg shadow bg-gradient-to-br from-gray-800 to-gray-400">
+                    <img class="rounded-t-lg w-full h-48 object-cover" src="./assets/images/pokemon/gen-covers/Gen-9-Cover.jpg" alt="Gen 9 Cover" />
+                    <div class="p-4">
+                        <h5 class="mb-2 text-lg font-bold text-white">Pokémon Generation 9</h5>
+                        <p class="mb-3 text-sm font-normal text-gray-300">Explore the ninth generation of Pokémon games, including Scarlet and Violet versions.</p>
+                        <a href="#" class="inline-flex items-center px-3 py-2 text-xs font-medium text-center text-white bg-gradient-to-br from-red-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-2 focus:outline-none focus:ring-orange-500 rounded-lg">
+                            Read more
+                            <!-- this is the point of the arrow -->
+                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
+
+
+
     </main>
 
     <!-- footer section -->
