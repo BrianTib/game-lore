@@ -396,6 +396,14 @@ function showAbilityDescription(description) {
     modal.removeClass('hidden');
 }
 
+// pokedexVersion function
+// this function displays the pokedex for the selected version in a modal
+function pokedexVersion() {
+    const modal = $('#pokedex-modal');
+    modal.find('#version-modal-content').text('Pokedex for the selected version');
+    modal.removeClass('hidden');
+}
+
 // closeModal function
 // this function hides the modal
 function closeModal() {
