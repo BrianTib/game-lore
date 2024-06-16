@@ -54,7 +54,7 @@
                         <li>
                             <a href="#api" class="text-white md:hover:text-red-600">APIs</li>
                         <li>
-                            <a href="#" class="text-white md:hover:text-red-600">Contact</a>
+                            <a href="#contact" class="text-white md:hover:text-red-600">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -123,25 +123,6 @@
                     </div>
                 </div>
     
-                <!-- <div class="md:col-span-3">
-                    <div id="pokemon-data">
-                        <h2 style="display: none" id="search-result-header" class="text-2xl font-bold mb-4"></h2>
-                        <p id="pokemon-id" style="display: none" class="mb-2 font-semibold">ID: <span id="pokemon-id-value" class="font-normal"></span></p>
-                        <p id="pokemon-name-display" style="display: none" class="mb-2 font-semibold">Name: <span id="pokemon-name-value" class="font-normal"></span></p>
-                        <img src="" alt="Pokemon Sprite" id="pokemon-sprite" style="display: none" class="mb-4">
-                        <p id="pokemon-type" style="display:none;" class="mb-2 font-semibold">Type: <span id="pokemon-type-value" class="font-normal"></span></p>
-                        <h2 id="pokemon-flavor-text" style="display: none" class="text-2xl font-bold mb-4">Pokédex Entry: </h2>
-                        <p id="pokemon-flavor-text" style="display: none;" class="mb-2 font-semibold">Text: <span id="pokemon-flavor-text-value" class="font-normal"></span></p>
-                        <p id="pokemon-stats" style="display:none;" class="mb-2 font-semibold">Base Stats: <span id="pokemon-stats-value" class="font-normal"></span></p>
-                        <p id="pokemon-height" style="display: none" class="mb-2 font-semibold">Height: <span id="pokemon-height-value" class="font-normal"></span></p>
-                        <p id="pokemon-weight" style="display: none" class="mb-2 font-semibold">Weight: <span id="pokemon-weight-value" class="font-normal"></span></p>
-                        <p id="pokemon-abilities" style="display:none;" class="mb-2 font-semibold">Abilities: <span id="pokemon-abilities-value" class="font-normal"></span></p>
-                        <p id="pokemon-hidden-abilities" style="display:none;" class="mb-2 font-semibold">Hidden Abilities: <span id="pokemon-hidden-abilities-value" class="font-normal"></span></p>
-                        <p id="pokemon-versions" style="display:none;" class="mb-2 font-semibold">Game Versions: <span id="pokemon-versions-value" class="font-normal"></span></p>
-                        <p id="pokemon-evolution" style="display:none;" class="mb-2 font-semibold">Evolution Chain: <span id="pokemon-evolution-value" class="pokemon-link font-normal"></span></p>
-                    </div>
-                </div> -->
-    
                 <!-- pokémon data column -->
                 <!-- add a class to reduces the width of the column to 80% and justify the content to the center -->
                 <div class="md:col-span-3 text-gray-500">
@@ -189,20 +170,41 @@
     </main>
 
     <!-- footer section -->
-    <footer id="api" class= "border-t-4 border-b-4 border-zinc-900 bg-gradient-to-b from-black to-zinc-900/[.5]">
-        <div class="w-2/4 flex flex-col my-10 gap-5 justify-center align-center mx-auto">
-            <div class="w-96 mx-auto flex flex-col justify-center align-center gap-2">
-                <h2 class="w-auto text-center text-5xl">API</h2>
-                <p class="w-auto text-center text-xl text-zinc-500">
-                    Pokémon <span class="text-white">Gamer</span><span class="text-red-600">Lore</span> uses the Pokémon API, PokéAPI
-                </p>
+    <footer>
+        <section id="api" class="border-t-4 border-b-4 border-zinc-900 bg-gradient-to-b from-black to-zinc-900/[.5]">
+            <div class="w-full flex flex-col my-10 gap-5 items-center mx-auto">
+                <div class="w-96 flex flex-col justify-center items-center gap-2">
+                    <h2 class="w-auto text-center text-5xl">API</h2>
+                    <p class="w-auto text-center text-xl text-zinc-500">
+                        Pokémon <span class="text-white">Gamer</span><span class="text-red-600">Lore</span> uses the Pokémon API, PokéAPI
+                    </p>
+                </div>
+                <div class="max-w-xl grid grid-cols-1 place-items-center gap-10">
+                    <!-- PokeAPI -->
+                    <img src="./assets/images/pokemon/poke-api.png" alt="PokéAPI icon"/>
+                </div>
             </div>
-
-            <div class="max-w-xl mx-auto grid grid-2 place-items-center gap-10">
-                <!-- PokeAPI -->
-                <img class="w-[450px] h-[150px]" src="./assets/images/pokemon/poke-api.png" width="450" height="150" alt="flowbite icon"/>
+        </section>
+    
+        <section id="contact" class="border-b-4 border-zinc-900">
+            <div class="w-full flex flex-col my-10 gap-5 items-center mx-auto">
+                <div class="w-96 flex flex-col justify-center items-center gap-2">
+                    <h2 class="w-auto text-center text-5xl">Contact</h2>
+                    <p class="w-auto text-center text-xl text-zinc-500">
+                        Keep in touch with the developer that makes Pokémon <span class="text-white">Gamer</span><span class="text-red-600">Lore</span>
+                    </p>
+                </div>
+                <div class="flex gap-20 justify-center">
+                    <a class="w-max flex flex-col items-center gap-2 text-xl text-zinc-500" href="https://github.com/josefalconGH" target="_blank">
+                        <img class="w-[96px] h-[96px] p-1 rounded-full ring-2 ring-red-600" src="./assets/images/profile-jose-icon.png" alt="Jose Github Icon">
+                        <div>
+                            <span class="text-white">Jose</span>
+                            <span class="text-red-600">Falcon</span>
+                        </div>
+                    </a>
+                </div>
             </div>
-        </div>
+        </section>
     </footer>
 
     <!-- tailwind modal -->
