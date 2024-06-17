@@ -82,48 +82,53 @@
              <!-- card -->
          <ul  class="flex flex-col justify-center items-center">
 
-            <li  id="map-search"  class="flex flex-col justify-center px-5 bg-zinc-950 h-72 w-auto max-w-fit items-center border-2">
+            <!-- <li  id="map-search"  class="flex flex-col justify-center px-5 bg-zinc-950 h-72 w-auto max-w-fit items-center border-2">
                 <label class="flex items-center"> Map </label>
                 <input type="text" id="map-input"  class="flex bg-white items-center border-4 text-gray-950" placeholder="Map Search">
                     <button id="map-search-btn" class=" flex flex-col btn btn-primary w-100 mb-4 border-2">Search</button>
                               
-            </li>
+            </li> -->
             <!-- stats form -->
-            <form id="stat-search-form"  class="flex flex-col justify-center px-5 bg-zinc-950 h-100 w-auto max-w-fit items-center text-gray-950  border-2">
-                <label class="flex items-center">Stats </label>
+            <h2 class="flex flex-row justify-center text-3xl font-semibold" >Stats </h2>
+            <section id="news-container" class="flex flex-row h-90 justify-center"> 
+              
+                                      
+                <form id="stat-search-form"  class="flex flex-col justify-center px-5 bg-zinc-950 h-100 w-auto max-w-fit items-center text-gray-950  border-2">
+                    <label class="flex items-center">Stats </label>
                               
                 <label for="stats-username" class="text-white mb-2">User Name</label>
-                <input type="text" id="username-input" class="mb-4 w-full bg-white items-center border-4 text-black p-2" placeholder="Enter your Username">
+            <input type="text" id="username-input" class="mb-4 w-full bg-white items-center border-4 text-black p-2" placeholder="Enter your Username">
         <!-- account type selector -->
-                <label for="account-type" class="text-white mb-2"> Account Type </label>
-                <select id="account-type-selector" class="mb-4 w-full bg-white items-center border-4 p-2">
-                    <option value=""disable selected>Select Your Account Type</option> 
-                    <option value="epic-account-type">EPIC</option>
-                    <option value="psn-account-type">PSN</option>
-                    <option value="xbl-account-type">XBL</option>
-                </select>
-        <!-- time window selector -->            
-                <label for="time-window" class="text-white mb-2"> Time Window </label>
-                <select id="time-window-selector" class="mb-4 w-full bg-white items-center border-4 text-gray-950 p-2">
-                    <option value=""disable selected>Select Your Time Window</option> 
-                    <option value="season-time-window">Season</option>
-                    <option value="lifetime-time-window">Lifetime</option>
-                </select>
+    <label for="account-type" class="text-white mb-2"> Account Type </label>
+<select id="account-type-selector" class="mb-4 w-full bg-white items-center border-4 p-2">
+    <option value=""disable selected>Select Your Account Type</option> 
+<option value="epic">EPIC</option>
+<option value="psn">PSN</option>
+<option value="xbl">XBL</option>
+</select>
+<!-- time window selector -->            
+<label for="time-window" class="text-white mb-2"> Time Window </label>
+<select id="time-window-selector" class="mb-4 w-full bg-white items-center border-4 text-gray-950 p-2">
+    <option value=""disable selected>Select Your Time Window</option> 
+<option value="season">Season</option>
+<option value="lifetime">Lifetime</option>
+</select>
 
-        <!-- image selector -->
-        <label for="image-platform" class="text-white mb-2"> Image Platform</label>
-        <select id="image-platform-selector" class="mb-4 w-full bg-white items-center border-4 text-gray-950 p-2">
-            <option value=""disable selected>Select Your Image Platform</option> 
-            <option value="all-image-platform">All</option>
-            <option value="keyboardMouse-image-platform">Keyboard Mouse</option>
-            <option value="gamepad-image-platform">Gamepad</option>
-            <option value="touch-image-platform">Touch</option>
-            <option value="none-image-platform">None</option>
-        </select>
+<!-- image selector -->
+<label for="image-platform" class="text-white mb-2"> Image Platform</label>
+<select id="image-platform-selector" class="mb-4 w-full bg-white items-center border-4 text-gray-950 p-2">
+    <option value=""disable selected>Select Your Image Platform</option> 
+<option value="all">All</option>
+<option value="keyboardMouse">Keyboard Mouse</option>
+<option value="gamepad">Gamepad</option>
+<option value="touch">Touch</option>
+<option value="none">None</option>
+</select>
 
-        <button type="submit" id="stat-submit-btn" class="flex flex-col btn btn-primary w-100 mb-4 border-2">Submit</button>
-    </form>
-    
+<button type="submit" id="stat-submit-btn" class="flex flex-col btn btn-primary w-100 mb-4 border-2">Submit</button>
+</form>
+</section>
+
     
           
         </main>
