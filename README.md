@@ -14,8 +14,13 @@ GamerLore is a web application designed to provide fun and random facts about yo
 - Responsive Design: Enjoy a seamless experience across all devices.
 
 # Links
-- [Github Repo URL](https://github.com/BrianTib/game-facts-hub)
-- [Github Pages URL](https://briantib.github.io/game-facts-hub)
+- [Github Repo URL](https://github.com/BrianTib/game-lore/)
+- [Github Pages URL](https://briantib.github.io/game-lore/)
 
 # Screenshots
-- TBD
+![HomePage](assets/images/screenshots/GamerLore-HomePage.png)
+![Pokemon](assets/images/screenshots/GamerLore-Pokemon.png)
+![Valorant](assets/images/screenshots/GamerLore-Valorant.png)
+![Valorant Showcase](assets/images/screenshots/GamerLore-Valorant.gif)
+![Minecraft](assets/images/screenshots/GamerLore-Minecraft.png)
+![Fortnite](assets/images/screenshots/GamerLore-Fortnite.png)
