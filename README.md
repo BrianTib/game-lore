@@ -23,4 +23,4 @@ GamerLore is a web application designed to provide fun and random facts about yo
 ![Valorant](assets/images/screenshots/GamerLore-Valorant.png)
 ![Valorant Showcase](assets/images/screenshots/GamerLore-Valorant.gif)
 ![Minecraft](assets/images/screenshots/GamerLore-Minecraft.png)
-![Fortnite](assets/images/screenshots/GamerLore-Fortnite.png)
+![Fortnite](assets/images/screenshots/GamerLore-Fornite.png)
