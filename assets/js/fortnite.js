@@ -126,64 +126,52 @@ function generateCards(motds){
     const newsSearch=document.getElementById('news-container')
     newsSearch.innerHTML +=html
 }
-
-function checkLocalStorageForStatData(){
-  let formData= localStorage.getItem('statSearchData')
-
-  if (formData) {
-    generateCards(formData)
-  } else {
-    fetchStatsAPIData
-  }
-  }
   
 statSearchFormEl.addEventListener('submit', handleStatFormSubmit)
 
 function handleStatFormSubmit (event){
   event.preventDefault();
  const formData ={
-   statsUsername:$('#username-input').val(),
+   name:$('#username-input').val(),
    accountType:$('#account-type-selector').val(),
    timeWindow:$('#time-window-selector').val(),
-   imagePlatform:$('#image-platform-selector').val(),
+   image:$('#image-platform-selector').val(),
  };
 
- localStorage.setItem('formData', JSON.stringify(formData))
-
-  console.log('statsUsername', statsUsername);
-  console.log('accountType', accountType);
-  console.log('timeWindow', timeWindow);
-  console.log('imagePlatform', imagePlatform);
+ fetchStatsAPIData(formData)
 }
 
-function saveStatsDataToLocalStorage(formData){
-  localStorage.setItem('formData', JSON.stringify(formData))
+
+function fetchStatsAPIData(formData) {
+
+  const name = formData.name;
+  const accountType = formData.accountType;
+  const timeWindow = formData.timeWindow;
+  const image = formData.image;
+
+
+  const url = `https://fortnite-api.com/v2/stats/br/v2?name=${name}&accountType=${accountType}&timeWindow=${timeWindow}&image=${image}`
+
+  fetch ( url, {
+    headers: {
+      Authorization: apiKey2,
+    },
+  })
+    .then(function (response){
+      return response.json();
+    })
+    .then(function (data) {
+      
+      generateStatsCard(data.data.image)
+    })
 }
 
-const username= "TWITCH STURDYAGI"
-const accountType=""
-const timeWindow=""
-const images="All"
+function generateStatsCard(imageSrc) {
+  const main = $('main')
+  const img = $(`<div><h2 class="flex flex-row justify-center text-3xl font-semibold" >Results</h2><img src=${imageSrc}></div>`)
+  main.append(img)
 
-const url = `https://fortnite-api.com/v2/stats/br/v2?=${username}&images=${images}`
-
-console.log('url', url)
-
-
-fetch ( url, {
-  headers: {
-    Authorization: apiKey2,
-  },
-})
-  .then(function (response){
-    return response.json();
-  })
-  .then(function (data) {
-    console.log(data)
-    const formData= JSON.parse(localStorage.getItem('stat-search-form'))
-    saveStatsDataToLocalStorage(formData);
-    generateCards(formData)
-  })
+}
 
 
     
