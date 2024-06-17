@@ -4,6 +4,13 @@ function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1); // capitalize the first letter of the string
 }
 
+// mobile hamburger menu function
+// this function toggles the mobile menu
+$('#navbar-toggle').on('click', function() {
+    var menu = $('#navbar-default');
+    menu.toggleClass('hidden');
+});
+
 $(document).ready(function() {
     // setupCollapsible function
     // this function sets up the collapsible sections
