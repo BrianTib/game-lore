@@ -14,12 +14,9 @@ getNewsData()
 //   console.log('map button')
 // }
 
-statSearchFormEl.addEventListener('submit', handleStatFormSubmit)
-
 
 
 // check local storage for news data
-
 
 function getNewsData() {
 
@@ -130,13 +127,28 @@ function generateCards(motds){
     newsSearch.innerHTML +=html
 }
 
+function checkLocalStorageForStatData(){
+  let formData= localStorage.getItem('statSearchData')
+
+  if (formData) {
+    generateCards(formData)
+  } else {
+    fetchStatsAPIData
+  }
+  }
+  
+statSearchFormEl.addEventListener('submit', handleStatFormSubmit)
+
 function handleStatFormSubmit (event){
   event.preventDefault();
+ const formData ={
+   statsUsername:$('#username-input').val(),
+   accountType:$('#account-type-selector').val(),
+   timeWindow:$('#time-window-selector').val(),
+   imagePlatform:$('#image-platform-selector').val(),
+ };
 
-  const statsUsername=$('#username-input').val();
-  const accountType=$('#account-type-selector').val();
-  const timeWindow=$('#time-window-selector').val();
-  const imagePlatform= $('#image-platform-selector').val();
+ localStorage.setItem('formData', JSON.stringify(formData))
 
   console.log('statsUsername', statsUsername);
   console.log('accountType', accountType);
@@ -144,26 +156,40 @@ function handleStatFormSubmit (event){
   console.log('imagePlatform', imagePlatform);
 }
 
-function getStatsData(){
-  const localSData = checkLocalStorageForFreshStatsData()
-
-  if (localSData) {
-    generateCards(localSData)
-  } else {
-    fetchStatsAPIData()
-  }
+function saveStatsDataToLocalStorage(formData){
+  localStorage.setItem('formData', JSON.stringify(formData))
 }
 
-function fetchStatsAPIData(){
-  fetch('https://fortnite-api.com/v2/stats/br/v2', {
-    method: "GET",
-    headers: {
-      Authorization: apiKey2
-    }
-    })
-}
+const username= "TWITCH STURDYAGI"
+const accountType=""
+const timeWindow=""
+const images="All"
+
+const url = `https://fortnite-api.com/v2/stats/br/v2?=${username}&images=${images}`
+
+console.log('url', url)
 
 
+fetch ( url, {
+  headers: {
+    Authorization: apiKey2,
+  },
+})
+  .then(function (response){
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data)
+    const formData= JSON.parse(localStorage.getItem('stat-search-form'))
+    saveStatsDataToLocalStorage(formData);
+    generateCards(formData)
+  })
 
 
+    
+  
+     
+             
 
+
+ 
