@@ -176,17 +176,19 @@ function setLocalStorage(key, value, ttl) {
 function getFromLocalStorage(key) {
     // Attempt to get the data from local storage
     const data = JSON.parse(localStorage.getItem('valorant_' + key));
-    if (!data) { return null; }
+    if (!data) { return; }
     
-    // If there is data...
+    // Check the current time create the expiry time
     const currentTime = Date.now();
     const expiryTime = data.timestamp + data.ttl;
 
     // Check if the data hasn't expired
-    // If it hasn't, return the data
+    // If it hasn't, return it
     if (currentTime < expiryTime) { return data.value; }
     
     // Data has expired, remove it from localStorage
     localStorage.removeItem('valorant_' + key);
+    // We return null to indicate that the data has
+    // expired and not that it doesnt exist
     return null;
 }
