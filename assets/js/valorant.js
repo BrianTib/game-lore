@@ -110,10 +110,10 @@ async function updateAgentCardByName(agentName) {
 
     // Update the card values
     agentNameEl.text(agentName);
-    agentArtworkEl.attr('src', baseURL + agentData.artwork);
-    agentIconEl.attr('src', baseURL + agentData.icon);
+    agentArtworkEl.attr('src', './assets/' + agentData.artwork);
+    agentIconEl.attr('src', './assets' + agentData.icon);
     agentRoleEl.text(agentData.role);
-    agentRoleIconEl.attr('src', baseURL + roleData.icon);
+    agentRoleIconEl.attr('src', './assets' + roleData.icon);
     agentCountryEl.text(agentData.origin);
     agentNumberEl.text('#' + agentData.number);
     agentVoiceActorEl.text(agentData.voiceActor);
