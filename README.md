@@ -19,10 +19,10 @@ GamerLore is a web application designed to provide fun and random facts about yo
 - [Slides URL](https://docs.google.com/presentation/d/1LyINo7XOckZAAlA5rtw2k1TKR1FvUGFEf94UFn5HfG4/edit#slide=id.g2e63f70cca3_1_81)
 
 ## Medium Links
-[Brian's Medium Link](https://medium.com/@bptiburcio/customizability-at-a-price-78746ec872ff)
-[Jose's Medium Link]()
-[Julia's Medium Link](https://medium.com/@jmeason00/impletation-of-team-work-practice-e191d2467e11)
-[Marc's Medium Link]()
+- [Brian's Medium Link](https://medium.com/@bptiburcio/customizability-at-a-price-78746ec872ff)
+- [Jose's Medium Link](https://medium.com/@jfalconMDM/tailwind-css-and-the-tailwind-modal-f7642e945134)
+- [Julia's Medium Link](https://medium.com/@jmeason00/impletation-of-team-work-practice-e191d2467e11)
+- [Marc's Medium Link]()
 
 # Screenshots
 ![HomePage](assets/images/screenshots/GamerLore-HomePage.png)
