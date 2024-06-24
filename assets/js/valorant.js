@@ -1,5 +1,5 @@
 const API_TOKEN = 'MDc1MGM5YWUtODdlYS00OTE2LWI2NWMtN2RlMGZmYzlmNjlh';
-const baseURL = 'http://vps-f1e41b99.vps.ovh.ca:3001';
+const baseURL = 'https://valorant-api-pi.vercel.app';
 
 // Dependencies
 const agentNameMenu = $('#agent-info');
